@@ -1,0 +1,4 @@
+interface:
+  display_name: "Rungsmith Perspective"
+  short_description: "Compose native views from real component contracts"
+  default_prompt: "Use $rungsmith-perspective to add a registered Viewcraft component to my development project."

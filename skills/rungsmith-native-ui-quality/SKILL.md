@@ -1,0 +1,43 @@
+---
+name: rungsmith-native-ui-quality
+description: Design or review native Ignition Perspective interaction, layout and motion for operator-facing HMI screens. Use for focus, menus, tooltips, scrubbers, alarm clarity and generic UI cleanup; distinguish native components from website or module implementations.
+metadata:
+  status: preview
+  native-verification: pending
+---
+
+# Native HMI quality pilot
+
+Establish the target Ignition version, project, operator task and implementation surface. Native Perspective views use component contracts, bindings, styles and server-side scripting. Website React code, browser DOM APIs and custom Perspective modules are different surfaces; do not silently substitute one for another.
+
+## Interaction contract
+
+Before editing a control, identify its input value, output event, local transient state and host-owned process state. Specify what click, drag, keyboard activation, Escape, blur and reopening do where applicable. Verify supported native properties/events against the target version instead of inventing APIs.
+
+Use native semantics when available. Make keyboard focus visible with the project's palette. Keep a tooltip tied to hover/focus and dismiss it when its trigger is activated; selected state is not tooltip state. A modal must restore focus, handle dismissal and preserve instance identity. Do not use global message state that lets one equipment panel modify another.
+
+During dragging, distinguish immediate visual feedback from the committed process value. Inspect supported native slider/scrubber update modes and measure round-trip effects. Do not promise browser-local smoothness from a stream of Gateway scripts. Keep bounds, units, steps, keyboard adjustment and lock conditions coherent. Apply actual enabled/interlock behavior, not just faded styling.
+
+## Translate web guidance
+
+For each proposed pattern, classify it: native property/layout; scoped stylesheet; website-only; custom module; unsupported or unverified. Prefer native Flex/Coordinate/container behavior appropriate to the view contract. Check browser/Workstation support for CSS features on actual deployed clients. Native runtime support is a separate requirement from modern browser availability.
+
+Use project-scoped tokens and styles. Avoid DOM-index selectors and blanket global overrides. For embedded previews, inspect both host and child scroll ownership; eliminate accidental nested scrolling while retaining access to long content, keyboard scrolling and high-contrast preferences. Hiding all scrollbars is not a repair for overflow.
+
+## Industrial craft and anti-slop
+
+Arrange information around the operator's next decision. Show equipment identity, units, freshness/quality and state before decoration. Give alarms consistent priority/state semantics; reserve strong color for meaningful states. Do not use a single accent color for start, stop, alarm and disabled states.
+
+Choose density from the task and viewport. Avoid gratuitous KPI cards, repeated gradients, decorative graphs and fabricated precision. Test long equipment names, empty/history states, translated labels, large values and narrow layouts. A live chart must respond to its data/window controls; label sample data honestly.
+
+Animate a change only when it helps explain continuity or feedback. Prefer small scoped opacity/transform transitions where supported, honor reduced motion, and keep repeated operational actions fast. Verify rapid reversal and interruptions. Do not delay a command or animate alarm significance away to match a web effect. Native morphs that cannot reproduce browser measurement should be documented as approximations.
+
+## Evidence
+
+Test actual keyboard and pointer behavior, lock/disconnect states, two equipment instances and close/reopen. Measure interaction latency and avoid spawning repeated sessions for visual checks. Report changed resources, target version, observed behavior and remaining limitations. Static validation, screenshots, browser interaction and Designer import are different evidence.
+
+## Sources and experimental scope
+
+This is original Rungsmith guidance informed by the public behavior and design domains of [Vercel UI SDK](https://github.com/vercel-labs/ui), [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance) and [Emil Kowalski's skills](https://github.com/emilkowalski/skills). It is not an exhaustive translation or a claim of upstream endorsement. Consult the requested source at a pinned revision when adapting a specific behavior.
+
+Catalyst is a separate, version-dependent exploration. Check the installed version/modules and current official docs before proposing an integration. Do not assume an 8.3 Gateway can run the documented 2027 beta functionality.
