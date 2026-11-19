@@ -29,9 +29,3 @@ A gesture contract with tested native behavior. Record the resource paths and te
 ## Example request
 
 Review this scrubber for release outside the bar, cancellation and keyboard adjustment.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/gestures

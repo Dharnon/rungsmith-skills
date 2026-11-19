@@ -29,7 +29,3 @@ A stable overlay contract and observed lifecycle results. Record the resource pa
 ## Example request
 
 Fix the stuck tooltip without changing selected navigation state.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

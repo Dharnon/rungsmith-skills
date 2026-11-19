@@ -29,9 +29,3 @@ A short, reviewable rule set grounded in the actual corrections. Record the reso
 ## Example request
 
 Review our corrections to spacing, semantic colors and disabled states. Propose reusable rules with their evidence.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/learn-taste

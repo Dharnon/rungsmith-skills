@@ -29,7 +29,3 @@ A feasibility map, native resource plan and explicit limits. Record the resource
 ## Example request
 
 Map this UI SDK pattern to native Perspective. Explain supported behavior and what needs a module.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

@@ -29,9 +29,3 @@ A feedback lifecycle tied to real outcomes. Record the resource paths and tested
 ## Example request
 
 Fix duplicate command notifications and keep equipment acknowledgments separate from alarms.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/ask-sonner

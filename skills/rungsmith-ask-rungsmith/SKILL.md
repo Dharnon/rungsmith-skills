@@ -29,9 +29,3 @@ A short diagnosis and the next skill to use. Record the resource paths and teste
 ## Example request
 
 This faceplate feels slow and confusing. Which workflow should we use first, and what evidence do you need?
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/ask-emil

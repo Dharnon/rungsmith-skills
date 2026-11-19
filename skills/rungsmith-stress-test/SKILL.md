@@ -29,9 +29,3 @@ A reproducible defect report with data cases and native test evidence. Record th
 ## Example request
 
 Stress-test this alarm table with long names, huge values and empty history. Report the breaks first.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/break-ui

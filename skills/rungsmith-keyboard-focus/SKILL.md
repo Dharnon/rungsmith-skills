@@ -29,7 +29,3 @@ A keyboard interaction matrix and supported native fixes. Record the resource pa
 ## Example request
 
 Walk through this equipment popup using only the keyboard. Record every blocked action.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

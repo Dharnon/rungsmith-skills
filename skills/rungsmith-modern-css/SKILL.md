@@ -29,9 +29,3 @@ A supported CSS change with compatibility and fallback notes. Record the resourc
 ## Example request
 
 Can container queries improve these embedded panels? Check the actual client and native layout first.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/GoogleChrome/modern-web-guidance

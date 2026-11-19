@@ -29,9 +29,3 @@ A smaller interface with a clear operational hierarchy. Record the resource path
 ## Example request
 
 Simplify this faceplate. Remove unnecessary cards and separators while keeping state and commands clear.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/miqdadbadjuber/anti-slop/tree/main/skills/antislop-ui

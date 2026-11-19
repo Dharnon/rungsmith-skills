@@ -29,7 +29,3 @@ A documented state map and bindings that preserve data meaning. Record the resou
 ## Example request
 
 Review sensor readings for stale, bad-quality and disconnected states.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

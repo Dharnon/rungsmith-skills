@@ -29,10 +29,3 @@ Touch-specific fixes and the tested client dimensions. Record the resource paths
 ## Example request
 
 Adapt this equipment panel for touch. Check keyboard overlap and access without hover.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/animate-expo
-- https://github.com/emilkowalski/skills/tree/main/skills/mobile-native

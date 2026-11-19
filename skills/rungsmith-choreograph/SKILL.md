@@ -29,9 +29,3 @@ A motion relationship map and a supported transition change. Record the resource
 ## Example request
 
 Simplify the motor panel transition. Keep status and commands immediately readable.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/choreograph

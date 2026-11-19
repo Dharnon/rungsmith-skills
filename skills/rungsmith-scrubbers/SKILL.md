@@ -29,7 +29,3 @@ A consistent value contract and latency observations in the native client. Recor
 ## Example request
 
 Diagnose this setpoint scrubber under fast dragging. Preserve units, limits and lock behavior.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

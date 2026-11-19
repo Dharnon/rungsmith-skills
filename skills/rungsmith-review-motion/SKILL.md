@@ -29,9 +29,3 @@ A focused review with actionable findings. Record the resource paths and tested 
 ## Example request
 
 Review the morph in this diff. Flag delays and stale final states before changing code.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/review-animations

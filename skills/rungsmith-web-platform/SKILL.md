@@ -29,9 +29,3 @@ A capability map and a realistic implementation recommendation. Record the resou
 ## Example request
 
 Assess CSS anchor positioning and the Popover API for this Perspective tooltip. Explain what is actually controllable.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/GoogleChrome/modern-web-guidance

@@ -29,9 +29,3 @@ A behavior mapping and native acceptance tests. Record the resource paths and te
 ## Example request
 
 Map UI SDK selection and popup behaviors to this native equipment picker.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/vercel-labs/ui/tree/main/packages/core/skills/ui-sdk

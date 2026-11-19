@@ -29,9 +29,3 @@ A before/after observation and the actual bottleneck. Record the resource paths 
 ## Example request
 
 Find why opening this faceplate is slow. Measure before changing animations.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/animation-performance

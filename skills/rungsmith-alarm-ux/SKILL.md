@@ -29,7 +29,3 @@ An alarm state matrix and specific UX changes with verification gaps. Record the
 ## Example request
 
 Review this alarm screen for active, cleared, unacknowledged and empty states.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

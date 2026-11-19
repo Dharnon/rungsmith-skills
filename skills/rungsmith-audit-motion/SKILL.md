@@ -29,9 +29,3 @@ A prioritized plan that another agent can execute. Record the resource paths and
 ## Example request
 
 Audit motion in these views and give me independent fixes ordered by operator impact.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/improve-animations

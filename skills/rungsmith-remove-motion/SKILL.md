@@ -29,9 +29,3 @@ Less motion with no invisible or stranded content. Record the resource paths and
 ## Example request
 
 Remove decoration from this alarm screen. Preserve meaningful acknowledgment feedback.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/remove-animations

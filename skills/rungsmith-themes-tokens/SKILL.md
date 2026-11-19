@@ -29,7 +29,3 @@ A token map, scoped style changes and theme verification notes. Record the resou
 ## Example request
 
 Unify the themes in these faceplates without changing alarm or command semantics.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

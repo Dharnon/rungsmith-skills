@@ -29,9 +29,3 @@ A component choice with its path, contract and reason. Record the resource paths
 ## Example request
 
 Pick the right native control for choosing equipment. Compare keyboard support, filtering and instance state.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/pick-ui-library

@@ -29,9 +29,3 @@ Working alternatives and a decision table. Record the resource paths and tested 
 ## Example request
 
 Prototype three motor panel layouts using the same values. Keep live tag writes disconnected.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/prototype

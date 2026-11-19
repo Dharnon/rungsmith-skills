@@ -29,9 +29,3 @@ A small opportunity list with reasons and exclusions. Record the resource paths 
 ## Example request
 
 Where would motion help this maintenance flow? Also explain what should remain instant.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/find-animation-opportunities

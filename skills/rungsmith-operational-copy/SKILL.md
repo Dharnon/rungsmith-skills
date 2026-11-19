@@ -29,9 +29,3 @@ Concise messages and a consistent state vocabulary. Record the resource paths an
 ## Example request
 
 Rewrite these command and error messages. Keep the equipment identity and actual failure cause.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/miqdadbadjuber/anti-slop

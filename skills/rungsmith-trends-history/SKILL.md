@@ -29,7 +29,3 @@ A chart/data contract and evidence that controls change the selected range. Reco
 ## Example request
 
 Make this history chart respond to range selection and explain gaps without inventing readings.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.

@@ -29,9 +29,3 @@ A precise term and an implementation boundary. Record the resource paths and tes
 ## Example request
 
 What should we call the transition between Home and Process? Explain the native options.
-
-## Research references
-
-Original Rungsmith adaptation; upstream implementations are not bundled.
-
-- https://github.com/emilkowalski/skills/tree/main/skills/animation-vocabulary
