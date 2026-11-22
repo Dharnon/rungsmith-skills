@@ -46,6 +46,12 @@ Next feed the actual returned values through the normal transform, then compare 
 
 Report a milestone table with trial count, shell time, first usable time, fixture difference and the narrowest causal conclusion supported by the comparison.
 
+## Test Perspective-specific hypotheses without cargo-cult rules
+
+A [community performance discussion](https://forum.inductiveautomation.com/t/performance-optimization-findings-for-perspective/79229) points to deeply nested Embedded Views and repeated individual tag reads as potential costs. Treat these as **hypotheses to measure**, not an official maximum nesting depth or a guaranteed fix. Capture view count/depth, repeated subscription/query work and the operator-visible timestamps before changing the structure. If scripts currently issue independent tag reads in a loop, compare a permitted batched-read implementation against the same paths and returned values in development.
+
+Parameter arrival and first usable controls are different milestones from the first visible shell. The [forum's stale-parameter example](https://forum.inductiveautomation.com/t/passing-params-in-view-issue-what-to-do-about-the-delay/84285) shows why an artificially delayed entrance cannot safely substitute for a validity gate. Use [the repeatable trend recipe](../rungsmith-perspective-engineering/RECIPES.md) and [the verification protocol](../rungsmith-perspective-engineering/references/verification.md) to preserve both measurement and operator behavior.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |
