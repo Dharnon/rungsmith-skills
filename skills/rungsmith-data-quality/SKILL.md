@@ -48,6 +48,12 @@ Show an example row before transformation and its rendered counterpart, with sou
 
 [Ignition manual — Tag History Bindings](https://www.docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-history-bindings-in-perspective)
 
+## Separate expected initialization from broken quality
+
+Perspective Tag Bindings expose **Overlay Opt-Out** and an option for the initial uncertain value; neither is a general license to turn unknown source health into a plausible process value. In the exact target version, inspect the [official Tag Binding options](https://docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-bindings-in-perspective). Make two fixtures: (a) transient initial Uncertain_InitialValue before first good subscription value, and (b) Bad quality after a previously good reading. Confirm that any initialization-only suppression does **not** suppress genuine connection failures.
+
+Compare a good numerical zero with bad quality carrying the last known zero. They may render similar digits but have different operator meaning. If the fallback is a formatted dash or retained last value, show a quality/freshness cue independent of color. Never use §coalesce§ to erase the only evidence of invalid source quality. For the reusable-view acceptance matrix, read [Perspective engineering verification](../rungsmith-perspective-engineering/references/verification.md).
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |
