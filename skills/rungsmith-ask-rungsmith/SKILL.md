@@ -56,6 +56,10 @@ For a mixed request such as “port this drawer and make it fast”, first estab
 
 Hand off one primary skill, the prerequisite already satisfied, the artifact it should produce and the condition for invoking a second skill.
 
+## Route generic Perspective build work to engineering
+
+A request to **create or refactor actual Perspective views, JSON, parameters or bindings** without an identified Rungsmith catalog component starts with [rungsmith-perspective-engineering](../rungsmith-perspective-engineering/SKILL.md). Its construction sequence and [evaluation cases](../rungsmith-perspective-engineering/EVALS.md) demand source-aware contracts, bad-quality handling and honest evidence levels. If a registered Rungsmith component is the intended starting point, use rungsmith-perspective for registry discovery first, then engineering for host-level composition and verification. A React prototype or rendered screenshot cannot replace this native gate.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |
