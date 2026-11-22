@@ -38,6 +38,16 @@ Map each displayed assertion to a source. The raw numeric value establishes magn
 
 Follow every transform that merges these signals. A formatter that substitutes zero for conversion failure destroys information needed later. Preserve a reason for unavailable data until presentation, then choose a display consistent with the site's conventions. Consider accessibility: a grayed-out number with its old unit still looks like a measurement to a user who cannot distinguish the color.
 
+## Distinguish source time, query time and display time
+
+Record which timestamp a user sees. A historian sample can have its own acquisition time, a query can finish seconds later and the session can render later still. Refreshing a label with the current clock makes old data appear newly sampled. In a simulated case, hold a sample at 10:00, return it from a query at 10:05 and reopen the panel at 10:07. The sample timestamp should still identify the 10:00 observation.
+
+When building a historical fixture, inspect the binding's result shape. The Tall shape exposes value, quality, timestamp and path per row. Preserve their association when sorting or formatting; sorting one list of timestamps independently of its values corrupts the evidence. A display of last retrieval time can be useful, but label it as such and keep it distinguishable from the measurement timestamp.
+
+Show an example row before transformation and its rendered counterpart, with source identity, value, quality, timestamp and time zone.
+
+[Ignition manual — Tag History Bindings](https://www.docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-history-bindings-in-perspective)
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

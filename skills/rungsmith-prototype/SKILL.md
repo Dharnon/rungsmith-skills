@@ -38,6 +38,14 @@ Write the decision before building the comparison. “Inline trends help operato
 
 Run an ordinary task and a recovery task. Ask the reviewer to locate an exception, inspect its last reliable value and return to the same point in the overview. Then introduce a wrong selection or missing reading. Record navigation steps, loss of context and mistaken interpretations. Avoid declaring a winner from a visual preference when the measured operator task points elsewhere.
 
+## Keep a task-level scorecard
+
+Give each variant the same scripted scenario and starting point. Record whether the reviewer selected the correct asset, recovered from an intentional wrong selection, reached the last reliable sample and returned to the overview with their original context. Record elapsed time only after defining the start and end of the task. A faster wrong selection is a failed trial.
+
+Consider a fixture where A wins on scanning 12 rows and B wins on comparing two detailed trends. Record both findings instead of averaging unlike tasks into one score. Choose according to the requested primary task, or combine a successful overview layout with the winning detail interaction if their contracts are compatible. Replay that combination; two independently successful variants do not establish that their combination works.
+
+Return the decision, the task it optimizes, one cost accepted, one unresolved constraint and which prototype resources belong in the final implementation.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

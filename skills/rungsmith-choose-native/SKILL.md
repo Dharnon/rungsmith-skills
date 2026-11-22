@@ -38,6 +38,14 @@ Write the host's smallest meaningful example. What value will be supplied, what 
 
 Estimate maintenance cost from concrete resources: extra bindings, scripts to adapt data shapes, duplicated focus behavior, additional style dependencies and repeated queries. A larger registered control can be a better fit when it already owns a difficult lifecycle. A simple native component can be preferable when the adapter would otherwise recreate a second source of selection truth.
 
+## Decide between a table and repeated equipment views
+
+Use a table when the primary task is comparing like fields across many records, sorting them and retaining a stable record identity. Consider a repeated equipment view when each item needs a richer local layout or independently owned interaction. Describe one real row before choosing: record ID, displayed fields, actions, quality and refresh frequency. Count subscriptions and embedded views for the expected population.
+
+Make the decision with a fixture containing duplicate display names and one selected record outside the initial visible area. Sort, refresh and return from detail. In the repeated design, observe the cost of mounting the normal number of instances. In the table design, verify whether the target component exposes the required per-row behavior. Capture the first requirement either candidate cannot meet with its documented interface.
+
+Decision example: choose the table for comparing 40 pressure readings; retain a separate detail faceplate for editing one selected asset. Verify identity survives a sort before wiring the launcher.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

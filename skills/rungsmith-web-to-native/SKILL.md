@@ -38,6 +38,14 @@ Choose one end-to-end behavior from the reference, such as selecting a pump and 
 
 Classify visual matches according to their dependency. A scoped color or spacing change may translate directly. A shared-element morph based on DOM measurement may require a different native solution. Preserve the operational purpose through stable identity and clear selection when geometry cannot be reproduced. Report which differences affect the user's task and which affect appearance alone.
 
+## Set a native acceptance contract before pursuing visual parity
+
+Take a reference bottom sheet with momentum, backdrop, swipe dismissal and editable fields. Identify the operator outcome of each feature. The sheet supplies context, dismissal returns to the parent and the fields hold a draft. A native dialog can meet those outcomes even if the opening trajectory differs. If gesture dismissal is essential, test the actual supported client events and the ability to preserve or cancel the draft on interruption.
+
+Classify each remaining difference by consequence. A different easing curve may be acceptable. A dismissal path that loses an unsaved change has functional impact. A browser-only gesture that interferes with native scrolling needs a supported alternative. Agree on the native behavior through a small development slice, then decide which visual differences justify further effort. Carry the original reference revision and target client into the handoff.
+
+Acceptance example: from the overview, open the selected asset, edit a fixture value, cancel, regain the opener and observe no committed change. Include narrow width and software keyboard cases.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

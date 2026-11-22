@@ -46,6 +46,14 @@ Begin at the overview with a concrete question such as “Which pump needs atten
 
 Inspect the actual ownership of each failure. A header can be composed by the popup host, a unit supplied through a view param and a quality badge derived by a local transform. Give the implementer the first incorrect value and its owner. Combine findings only when a shared change can fix them without altering other consumers.
 
+## Review the same screen in three operating conditions
+
+Capture normal production, one exceptional piece of equipment and partial data loss at the intended client size. Use realistic asset names and nonuniform values. In normal production, evaluate alignment and scanning across assets. In the exceptional state, identify how quickly the affected equipment and condition can be read. In partial data loss, verify that the interface preserves uncertainty rather than offering a deceptively clean summary.
+
+Record the first decision each picture supports. If a normal screen is covered in equally prominent badges, reduce prominence where the semantic role permits. If an alarmed screen becomes one undifferentiated red block, separate priority, equipment identity and next available action. If uncertainty is visible only in a detail tooltip, bring an accessible cue to the overview. Check the revised three states as a set.
+
+Deliver three annotated observations with the responsible resource, the intended visual emphasis and one existing convention the edit must preserve.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

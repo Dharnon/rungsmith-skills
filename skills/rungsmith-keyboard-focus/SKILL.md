@@ -38,6 +38,14 @@ Record the focus target on entry, the key that activates it, the target after ac
 
 Treat dynamic changes as part of the route. Validation text can resize the panel, filtering can remove the return target and a disabled submit action can alter traversal. Check the native control's documented keyboard behavior before inventing custom key handlers. Preserve familiar activation behavior and avoid handling the same key in both a parent and its child.
 
+## Audit a rearranged editing form
+
+At workstation width, record the visible arrangement and the Tab sequence for asset, mode, numeric input, Apply and Cancel. Collapse the panel to its narrow layout. A visual reorder can place Apply above an input while keyboard traversal still follows the original component structure. Trace the order on the live page and verify each keypress has a visible destination.
+
+Choose the smallest repair that restores the logical task sequence at both widths. Revisit container composition before assigning bespoke key handlers. Exercise Shift+Tab, an invalid value that displays a message, and dismissal back to the launcher. Inspect the focus cue when the containing region scrolls. A successful activation at the end of the sequence does not establish that the intermediate fields were usable.
+
+Return a two-column trace of wide and narrow focus sequences. Mark the first divergence from the editing task and the component responsible.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

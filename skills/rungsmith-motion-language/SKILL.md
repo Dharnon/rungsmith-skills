@@ -38,6 +38,14 @@ Describe the visible relationship in nouns and verbs before naming a technique. 
 
 Finish the brief with an interruption rule. If the operator selects B while A opens, does the presentation retarget, close A first, or update one stable shell? Include the expected state when motion is reduced and when the data arrives late. That description gives the implementer a testable target even when the original reference uses a different rendering technology.
 
+## Choose a term that predicts what the operator will see
+
+A reveal keeps the enclosing context stable while details become visible. A crossfade trades visibility between two representations and can briefly show both. A reorder moves existing records while keeping their identities. A replacement discards one asset context and establishes another. Use these distinctions to settle whether two names, values or controls may ever coexist visibly during the transition.
+
+For a trend tab, “reveal the chart after matching data arrives” establishes ownership and readiness. For switching pumps, “replace the asset context” explains why a crossfade between two command surfaces may be ambiguous. For a table resort, “reorder stable records” leads the implementer to inspect record identity. Give each term an observable start, ending and interruption behavior before discussing a curve or duration.
+
+Example brief: On selection, keep the line overview visible, replace the detail asset identity, then reveal history when its matching result arrives. On a second selection, invalidate the earlier pending result.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

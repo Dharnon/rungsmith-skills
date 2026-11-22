@@ -40,6 +40,14 @@ Define the start surface, permitted direction, point at which the interaction co
 
 During editing, keep visual feedback, transient value and host-confirmed value distinguishable. At release, consult the existing command contract for commit and rejection. On cancellation, recover the current authoritative value, which might have changed since the gesture began. Observe the actual native behavior when the pointer leaves the component; browser examples that depend on pointer capture require explicit support.
 
+## Choose a path for fine adjustment
+
+A touch slider that spans a large engineering range may offer fewer usable positions than the requested increment. Compare the usable track length at the deployed size with the count of distinct steps. For a 0–100 range in 0.1 increments there are 1,001 distinct values. A narrow track can still be useful for coarse exploration, while a native numeric input or supported step controls may serve precise entry better.
+
+Build both paths against the same fixture draft and commit contract. Set a value near a bound by touch, refine it by one increment, then cancel. Repeat using the numeric path alone and verify the host receives the same unit and rounded value when committed. If the two controls remain visible simultaneously, keep their draft synchronized without feeding programmatic synchronization back as a second user intent.
+
+Specify the coarse gesture, precise alternative and cancellation route. Include an example value that is difficult to acquire by drag at the deployed width.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

@@ -36,6 +36,14 @@ Sketch the child inputs, host-owned selections and outputs on a single equipment
 
 Walk through cold open, asset change and reopen. On cold open, defaults may be visible before binding results arrive. On asset change, the header may update before asynchronous history returns. On reopen, a stored tab can select content that the new equipment does not support. Specify which part of the shell stays stable and when each dependent region can display meaningful data.
 
+## Read a loop in manual and automatic modes
+
+Start with the actual PID view contract. Locate process variable, setpoint, controller output, mode and the engineering unit for each. PV and SP may share a scale; output may be a percentage. Giving all three the same unit or a shared trend axis without context can make a plausible-looking panel wrong. Identify which controls the existing host exposes in each mode.
+
+Create a read-only fixture with PV 72 °C, SP 75 °C and output 38%. Switch the simulated mode while keeping those values fixed. Check that the labels retain their meaning and the offered edit surface follows the host contract. Then make PV unavailable while SP remains valid. The panel should preserve what is known independently about the setpoint, feedback and output. Confirm the parent overview uses the same conventions.
+
+Return a field map for PV, SP, output and mode, including units, validity source, permitted display states and the relevant host parameter.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

@@ -38,6 +38,14 @@ Choose a route used repeatedly during a shift, one exceptional path and one auto
 
 Separate prevalence from impact. A rarely opened blocking dialog can matter more than a ubiquitous decorative fade. Document whether the defect hides equipment identity, delays a next action, causes input to miss, or merely feels inconsistent. Estimate prevalence from inspected consumers. Avoid multiplying one shared cause into one finding per screen.
 
+## Use a cause ledger
+
+Give each observation a route, trigger and candidate owning resource. For example, an equipment popup and a history drawer may both flash on data arrival. Temporarily remove their shared entrance class in a development copy. If only the popup stops flashing, keep two ledger entries: a presentation trigger in the popup and an unresolved drawer lifecycle issue. Similar recordings alone do not justify merging the findings.
+
+Track inspected consumers as a denominator. “Observed in two of three inspected consumers of class X” tells the implementer what to retest; “affects the whole project” usually does not. After a repair, replay one affected route, one originally unaffected route and one automatic refresh. Close a ledger entry when the trigger stops producing the documented consequence.
+
+Example repair ticket: On a history result, the detail header replays its opening cue. Owner: child root class binding. Acceptance: header stays steady on refresh, opens normally on navigation, and remains readable with motion reduced.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

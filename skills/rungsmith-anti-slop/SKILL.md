@@ -36,6 +36,14 @@ Take a screenshot of a populated overview at normal operator distance. Hide the 
 
 Build hierarchy from an actual sequence. For a pump comparison the repeated sequence might be identifier, running state, pressure, quality, detail action. Align those items in the same order across pumps. Preserve intentional departures such as a persistent alarm marker. A card is worth retaining when it makes the association between a control and its equipment unmistakable at a glance.
 
+## Design the comparison column
+
+Put three pressure values in the actual overview: 9.8, 10.0 and 101.2 kPa. Alternate the first two in a development fixture. Watch whether the units or neighboring status icons move. Align quantities with the same meaning on a common edge; reserve space for the sign and quality treatment. If the deployed font supports tabular numerals, compare them at actual station size. Decide decimal precision from the measurement contract.
+
+Try placing the unit in the column heading for a single-unit table. Then inspect a mixed-unit row, compact breakpoint and detail popup. Repeat the unit beside the value wherever the heading no longer supplies reliable context. This is a more useful density improvement than reducing every padding value: it removes repeated text precisely where the relationship remains obvious.
+
+Deliver an annotated before/after of one populated column, including zero, a negative value if valid, the longest value and unavailable quality.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

@@ -38,6 +38,14 @@ Identify what created the message, what event may update it and what makes it ob
 
 Choose scope deliberately. A transient panel message belongs to an instance. A notification that should survive navigation needs an existing owner with the required lifetime. A process alarm has its own lifecycle. For simultaneous requests, inspect the correlation evidence before coalescing messages. Similar wording or the same equipment ID may still describe independent requests.
 
+## Choose where the outcome will remain discoverable
+
+Use local feedback beside a control when the operator is waiting there for a result. Use a page-level notice when a completed task belongs to the current page but its initiating control may be out of view. If a condition requires durable attention, use the project's established persistent status or alarm workflow. Choose the surface by how the operator will recover the information after dismissal.
+
+Simulate ten independent fixture completions while the operator edits another panel. Stacking ten identical success messages can conceal a failure and obscure active controls. Preserve meaningful identities and failures; consider a scoped summary only when the host can count the completed requests accurately and expose details. Avoid grouping unrelated outcomes by adjacent delivery times. Replay with one failure and one unknown outcome.
+
+Illustrative summary from ten correlated fixtures: 8 confirmed, 1 rejected, 1 awaiting confirmation. Verify each total against the fixture records before displaying it.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

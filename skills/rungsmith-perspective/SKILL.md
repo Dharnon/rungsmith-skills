@@ -68,6 +68,14 @@ Mark the public contract and the internal state separately in the view tree. An 
 
 For a composite input, inspect how the target version and view configuration handle incoming keys and defaults. Test an omitted field, an explicit empty field and a partial update through an actual host. Inspect the child's effective params rather than assuming a source JSON object reaches it unchanged. Keep a compatibility note for existing consumers when defaults or data shapes change.
 
+## Build a minimal host before composing a page
+
+For a locally authored development fixture, create a child view named Training/EquipmentSummary with an input parameter named equipmentId. Bind a Label in the child to that view parameter. In a host view add a native Embedded View, set props.path to Training/EquipmentSummary and set props.params.equipmentId to P-204A. Add a second instance with P-204B. These example names are local fixture definitions, not claims about a registry component.
+
+Open the host in a session. Change one host parameter and confirm only its corresponding label updates. This establishes that path resolution, parameter names and instance boundaries work before tag quality, styling or popup logic enter the investigation. When consuming a real Rungsmith package, substitute only its returned paths and declared params. Preserve param direction and inspect what the existing consumer actually supplies.
+
+Expected initial labels: P-204A and P-204B. After changing only the second host param to P-301, expected labels: P-204A and P-301.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

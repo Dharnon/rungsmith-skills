@@ -38,6 +38,14 @@ Inspect the physical target device, effective viewport, orientation and input me
 
 Check neighboring targets together. A large touch surface can overlap a secondary action or make scrolling from the row difficult. Keep primary selection, scrolling and explicit commands distinguishable. Offer visible routes to functions previously exposed by hover. After dismissing a popup, verify the list returns to a recognizable position and the next tap acts on the equipment under the finger.
 
+## Expose secondary actions on a real touch route
+
+Choose an equipment row whose maintenance actions are visible only on hover in the desktop reference. On a touch device, first try to discover those actions without prior knowledge. Inspect whether tapping the row also navigates, whether long press triggers the browser's own behavior and whether secondary actions compete with scrolling. Record the actual target device and browser shell.
+
+Consider an explicit row action or a labelled action in the equipment detail. Keep the target associated with its asset and separate from the primary selection event. Test tapping the secondary action after a sort, then scrolling from the same region without intended activation. Verify the same function remains reachable by keyboard. Do not assign operational meaning to an undiscoverable gesture alone.
+
+Report the discovery path, equipment identity at activation, number of intents and the result of a scroll starting beside the trigger.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

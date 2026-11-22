@@ -48,6 +48,14 @@ Start from the verb in the report. “Opening”, “waiting”, “choosing”,
 
 Choose between two plausible owners using one reversible substitution. Replace a slow live source with an equivalent fixture while keeping the view and selection constant. Change the client width while keeping the asset and data fixed. Disable a decorative transition while retaining the host action. Hand the specialist the discriminating observation and the parts of the setup that must remain constant.
 
+## Route by the next deliverable
+
+For “build me a tank panel”, inspect the target host and determine whether an installed resource already expresses the needed input and output contract. If it does, route package acquisition to install and composition to faceplates. If the operator task is known but the layout choice remains open, route to prototype with the actual comparison question. If the only evidence is a web reference, begin with web-to-native to identify feasible native behaviors.
+
+For a mixed request such as “port this drawer and make it fast”, first establish what the deployed native interaction is. Performance measurements belong to a working host with a named milestone. Record the dependency explicitly: native slice first, timed fixture second. An existing native drawer with reproducible lag reverses that decision and can start with performance immediately.
+
+Hand off one primary skill, the prerequisite already satisfied, the artifact it should produce and the condition for invoking a second skill.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

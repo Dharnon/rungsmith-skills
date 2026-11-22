@@ -45,6 +45,16 @@ Read one row aloud. Which equipment is affected? Is its condition active now? Ha
 
 If a banner and table disagree, compare their scopes using the same instant, area and definition of outstanding. One might count active conditions while the other includes cleared events awaiting acknowledgment. Document the two predicates in operator language. Change the label when the scopes are intentionally different; change the data selection when the view promises the same population.
 
+## Separate shelving from acknowledgment
+
+During a simulated maintenance window, consider an active alarm that an authorized user shelves. Capture the EventId, active state, acknowledgment state and shelving indication from the configured alarm data. Inspect the active and shelved surfaces with the same area filter. The disappearance of the row from the ordinary list establishes what the list shows; it does not establish that the process condition cleared.
+
+Exercise expiry separately from a manual return. While the fixture is shelved, first leave the condition active, then run a second occurrence where it clears. Observe each after the shelf ends. Derive the caption from the returned state. For a count such as “3 active”, document whether shelved items contribute and check the drill-down against that definition. Preserve the site's existing alarm policy; this exercise concerns what the view communicates.
+
+Maintenance replay: source, EventId, shelf state, active state, acknowledgment, list membership and count predicate.
+
+[Ignition manual — Alarm Event Properties](https://docs.inductiveautomation.com/docs/8.1/platform/alarming/configuring-alarms/alarm-event-properties-reference)
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

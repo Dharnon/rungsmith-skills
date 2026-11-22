@@ -38,6 +38,14 @@ Capture the original request, the resulting diff and the surface where the revie
 
 Write a candidate rule with a recognizable trigger, a concrete action and a limiting case. “Keep the equipment identifier visible while detail tabs change” is testable on a real view. “Make it feel industrial” leaves future agents free to invent conflicting changes. Keep a citation to the project path or review decision that lets a maintainer revisit the rule.
 
+## Turn feedback into an evidence-backed edit
+
+Suppose the reviewer says “get rid of the pills”. Inspect the actual change. If the approved diff removes ornamental unit badges from a comparison table but retains an alarm-state badge in the header, “never use badges” predicts the wrong result. A defensible rule is narrower: place repeated engineering units in a shared column heading when all rows have the same unit and that heading remains visible.
+
+Test the rule on two counterexamples before recording it: a mixed-unit table and a compact layout that drops its column heading. Write the exception into the rule only if it changes a real implementation decision. If the reviewer simply disliked one particular appearance, keep the note local to that view. Preserve the source of the decision so a future maintainer can challenge or revise it.
+
+Suggested rule record: approved change, qualifying context, one positive example, one counterexample and the project resource where the rule belongs.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

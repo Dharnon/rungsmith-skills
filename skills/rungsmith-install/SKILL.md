@@ -36,6 +36,14 @@ For the intended revision, inventory the resources actually supplied: view paths
 
 After import, test an unchanged previous consumer as well as a fresh example. The example verifies the new happy path; the existing consumer exercises omitted defaults, old params and previously customized styles. Capture the first failing boundary: archive, resource recognition in Designer, child rendering or host interaction. This makes a blank embed diagnosable without reinstalling unrelated components.
 
+## Compare three resource versions
+
+Use the previously installed upstream resource as the base, the current project resource as the local version and the proposed package as the incoming version. Compare each to the base. An incoming-only change can often be adopted directly. A local-only change identifies a customization to retain. When both sides changed a binding, style or parameter, inspect its consumer before combining them.
+
+For example, the project may have customized the temperature unit while the package changed the binding supplying that field. Keeping the old label while taking the new binding can produce a unit mismatch. Reconcile label, conversion and binding together in a development copy. If the base revision is unavailable, record that limitation and compare against an actual consuming view. Preserve recoverable copies of replaced resources.
+
+Deliver a short table of incoming path, local customization, chosen resolution and consumer used to validate it.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

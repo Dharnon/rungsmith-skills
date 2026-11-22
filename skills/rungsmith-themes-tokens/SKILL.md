@@ -40,6 +40,14 @@ Inventory the actual consumers before renaming a color. A shared accent can curr
 
 Review combinations against real backgrounds, including focus on an alarmed row and disabled text over a selected surface. Inspect the actual winning declaration in each supported theme. When changing a token, select a second consumer with a different surrounding surface as a regression case. Document the role and affected states so later changes preserve equipment semantics.
 
+## Migrate one role through an opt-in class
+
+Pick one duplicated role such as secondary measurement text. Inventory a normal overview value, a disabled control label and a quality warning that happen to share the same literal color. Only the overview value is known to represent the role. Define or reuse a project-owned semantic variable at the appropriate scope and opt in that one class. Leave the other contexts until their meanings are understood.
+
+Compare default, selected and focused rows in each supported theme. If a parent overrides the variable, verify its scope by showing an opted-in neighbor and an unchanged neighbor side by side. Once the role works across intended consumers, migrate them incrementally. Retain any project-specific theme fallback required by the deployed clients. Document when the obsolete literal can be removed.
+
+Example candidate map: summary muted text → secondary measurement role; disabled button → native disabled styling; stale reading → quality-specific cue. Matching color literals alone are insufficient evidence of shared meaning.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

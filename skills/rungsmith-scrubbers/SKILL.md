@@ -38,6 +38,14 @@ List display unit, host unit, low and high bounds, allowed increment, reference 
 
 Separate preview from commit. A continuously updating numeric label can follow the draft without requiring a process request for every movement. A rejected request must leave an intelligible accepted value and permit another valid edit. If conversion and rounding occur at different layers, trace an example in both directions. Format for readability only after establishing the numeric value used by the host.
 
+## Test display units against host units
+
+Suppose a fixture host stores kPa while the edit surface displays bar, with 1 bar equal to 100 kPa. The host supplies 250 kPa. The editor displays 2.50 bar. Increasing by 0.05 bar should produce a draft of 2.55 bar and a single intended host value of 255 kPa. Trace the value at the native control, conversion boundary, emitted request and host-confirmed readback.
+
+Confirm that an incoming 255 kPa does not re-enter the conversion path as 255 bar or generate another edit intent. Compare drag and keyboard paths and repeat after a rejected request. Inspect where rounding occurs. Rounding the engineering value early can change the accepted step grid; rounding the formatted string should affect presentation only. Confirm the displayed unit changes together with its numeric representation.
+
+Fixture expectations: 250 kPa → 2.50 bar → one increment → 2.55 bar → one request for 255 kPa → confirmed display 2.55 bar.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

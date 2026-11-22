@@ -38,6 +38,14 @@ Record the operator-visible milestone before inspecting implementation. Slow fir
 
 Interpret the result narrowly. A faster chart with fewer points implicates a data-volume-dependent cost; it does not establish whether the bottleneck is query, transformation, transport or rendering. Time those boundaries using available project diagnostics. Preserve the smallest reproducible case and compare cold, repeated and post-navigation runs before claiming a durable improvement.
 
+## Interpret a measured comparison without overclaiming
+
+Illustrative recordings: live binding gives shell at 180 ms and first plot at 1,450 ms. An equal-sized local dataset gives shell at 175 ms and first plot at 430 ms. The difference implicates work on the live-data path. It does not isolate database time. Query execution, result transfer and transforms still need separate observations. Retain the same point count and chart settings across runs.
+
+Next feed the actual returned values through the normal transform, then compare a fixture already in chart-ready form. If the gap persists with the same local input, inspect transformation or repeated work. If it disappears, follow the acquisition path. Run repeated trials and report the spread, client build and cold/warm status. Measurements from this example are illustrative rather than target budgets.
+
+Report a milestone table with trial count, shell time, first usable time, fixture difference and the narrowest causal conclusion supported by the comparison.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

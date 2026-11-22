@@ -38,6 +38,14 @@ Read the source component's public contract in the requested revision. Identify 
 
 For each mapped output specify what causes it and which transitions should stay silent. Hydrating an initial selection, receiving a host change and committing a user choice can all produce the same visible label. Exercise those transitions separately. If the native component deliberately differs, agree on the operator-facing contract before adding adapters that might create a second source of truth.
 
+## Keep a behavior-level compatibility record
+
+Pin the reference revision and the installed native component version when evaluating a port. Record the specific behavior tested rather than a blanket compatibility label. A selector may match value propagation and option identity while differing on Escape, focus recovery or keyboard navigation. Capture the input, trigger and visible or emitted result for each supported behavior.
+
+On an upstream upgrade, compare the public interaction changes with this record before revising native code. A new web styling prop may require no native change. A change to whether clearing emits a public selection event may affect every consumer. Replay the smallest affected native test, then check an existing host that still expects the original behavior. Keep the adapter scoped to the agreed native contract.
+
+Example compatibility entry: external selection update → label changes once → zero user-commit intents. Record the tested upstream revision and the native fixture output count.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

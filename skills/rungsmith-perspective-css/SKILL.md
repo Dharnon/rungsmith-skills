@@ -43,6 +43,14 @@ Start at the first incorrect rectangle. Inspect the available size in the host, 
 
 Check the cost of the fix on another consumer. A global overflow rule can make one screenshot cleaner while hiding the only way to reach a command in a small popup. A child-wide minimum width can repair a workstation layout and break a docked tablet view. Prefer an explicit compact layout or host-specific opt-in when these contexts genuinely require different arrangements.
 
+## Work through the available-height budget
+
+A fixture popup has 480 px of usable content height, a 64 px header and a 56 px footer. Before gaps and padding, the body can use 360 px. If an embedded child insists on its 420 px default height, at least 60 px must overflow or displace another region. Inspect the native parent's position settings, embedded default-height configuration and the intended body scroll region in that order.
+
+Add the actual margins, padding and any validation text that appears outside the body. Measure again after zoom or a translated heading wraps. Choose one intentional vertical scroll owner. Keep the header and footer stationary only if the resulting body remains usable; a very short viewport may need the whole panel to scroll. Verify the last field and the dismissal path with keyboard and touch.
+
+Record the measured height at each boundary, the first overcommitted child and which region remains scrollable after the fix.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

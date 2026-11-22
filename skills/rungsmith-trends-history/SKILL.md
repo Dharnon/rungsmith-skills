@@ -38,6 +38,16 @@ Ask whether the chart is used to see a long-term pattern, locate a short excursi
 
 Trace a known fixture excursion through raw input, returned samples and the plot. If the query already omits the excursion, changing line interpolation will not recover it. If the returned samples contain a gap while the line appears continuous, inspect the chart configuration. Document what the chosen window and aggregation allow the operator to infer about the underlying process.
 
+## Inspect a sample gap at all three boundaries
+
+Use three known raw records, with a deliberate gap between the second and third. In the Tag History binding inspect time range, query mode, aggregation and interpolation settings. Capture the returned timestamps and values before any view transform. In Tall format, preserve the relationship among path, time, quality and value. Compare this with the series passed into the chart and its rendered line.
+
+If the binding returns intermediate values, changing the line style cannot restore an event-only interpretation. If the binding leaves a gap but the chart connects neighboring points, query changes alone will not make the display communicate that gap. Inspect the target version's Prevent Interpolation option for the actual query and evaluate its output with the fixture. Document whether the operator is reading recorded samples, aggregates or a visual connection between observed points.
+
+Trace: raw records → returned history rows → transformed series → rendered interval. Identify the first boundary that changes the apparent continuity.
+
+[Ignition manual — Tag History Bindings](https://www.docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/working-with-perspective-components/bindings-in-perspective/tag-history-bindings-in-perspective)
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

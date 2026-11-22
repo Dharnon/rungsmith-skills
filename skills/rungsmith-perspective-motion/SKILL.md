@@ -39,6 +39,28 @@ First make the resting states correct with all transitions disabled. Verify the 
 
 For a reversible interaction, define what happens when the state changes halfway through the effect. Compare direct retargeting with a fresh entrance. If the framework cannot expose the needed geometry, a persistent selection cue plus a local reveal can preserve the operator's sense of place. Keep command acknowledgment and process quality tied to their authoritative signals throughout.
 
+## Use one persistent indicator with two resting states
+
+For a fixture disclosure row, keep the equipment label stationary and rotate only its direction indicator as the detail expands. Give the indicator a stable project class and bind an additional state class to the actual expanded flag. Preserve the native activation control and visible focus cue. The expanded region must remain operable when transitions are disabled.
+
+A project stylesheet can transition transform on the base indicator class and set rotation on the expanded class. In the reduced-motion rule remove the transition while keeping the final orientation. Rapidly expand, collapse and expand during a delayed detail update. If the indicator restarts from its initial orientation every time a value arrives, inspect whether the element is being recreated. Keep the cue tied to expansion, not process refresh.
+
+```css
+.psc-detailChevron {
+  transition: transform 120ms ease-out;
+}
+.psc-detailChevron.psc-expanded {
+  transform: rotate(90deg);
+}
+@media (prefers-reduced-motion: reduce) {
+  .psc-detailChevron {
+    transition: none;
+  }
+}
+```
+
+Tune in the target client.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

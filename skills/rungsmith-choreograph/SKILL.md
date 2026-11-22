@@ -38,6 +38,14 @@ Use simultaneous change when two fields describe one fact: the asset identifier 
 
 Inspect the intermediate state as carefully as the final one. During a crossfade, both panels can be legible and interactive for a moment. A native popup may have a separate focus lifecycle from its trigger. Try a single stable shell first when overlapping equipment panels would make identity ambiguous. Check the reduced-motion version with the same sequence of state updates.
 
+## Describe a timeline with observable milestones
+
+Sketch four lanes: launcher, stable shell, equipment fields and history. Mark trigger accepted, shell visible, first valid reading and history resolved. Put each cue on its owning lane. Shell visibility can follow navigation. The reading must follow a valid sample for the selected asset. The chart follows the matching history response. A fixed animation delay cannot establish either data dependency.
+
+Replay the same sketch with two launch orders. In a warm open, history may be available before the shell finishes entering. In a cold open, it may arrive much later. Both paths should converge on the same layout without briefly showing a previous asset. If the chart is already available, display it directly instead of forcing a staged loading performance. Use waits only for observed data states.
+
+Write a milestone timeline for cold, warm and interrupted opens. Mark the first moment the operator can dismiss or switch equipment in each.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

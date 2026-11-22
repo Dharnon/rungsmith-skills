@@ -40,6 +40,28 @@ Write down the usable baseline at the smallest supported host width. Choose nati
 
 Test the enhancement with the same viewport and two different embedded widths. Inspect the rule in the actual client, then disable only that rule. A successful fallback retains labels, units and reachable controls. If the enhanced layout relies on generated descendants inside a native component, assess the cost of a selector breaking after a module upgrade before adopting it.
 
+## Use the width of the equipment card
+
+Create project-owned top-level classes panelShell and panelReadings and assign them to two distinct nested containers. In a project stylesheet that supports the feature, establish an inline-size query container on the shell. Keep the inner layout in its compact arrangement by default. Change the inner arrangement only above the width at which the actual labels and units fit. Measure that threshold with the project's content.
+
+The following example assumes the readings element already uses flex and that its direction is controlled by this rule. Inspect native Flex configuration and inline styles if the class has no effect. If the project already supplies an appropriate container layout, reuse it. Place a wide and narrow instance side by side in the same page. Confirm that only the wide instance changes direction and that the compact layout remains usable without the query.
+
+```css
+.psc-panelShell {
+  container-type: inline-size;
+}
+.psc-panelReadings {
+  flex-direction: column;
+}
+@container (min-width: 28rem) {
+  .psc-panelReadings {
+    flex-direction: row;
+  }
+}
+```
+
+The 28rem value is a fixture threshold.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

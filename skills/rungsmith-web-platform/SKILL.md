@@ -40,6 +40,14 @@ For a proposed capability, distinguish browser support, an accessible integratio
 
 Design the fallback as an operator task. If a browser convenience is unavailable, can the user still identify, select or dismiss the item through a supported native interaction? Test failure explicitly, including embedding conditions where relevant. Report which surface and client were tested; success in a standalone demo cannot establish availability through a native view or embedded deployment.
 
+## Separate native capability from preview delivery
+
+Test the same operator task in three contexts when available: the native session directly, the hosted preview page and the embedded session inside that page. Record the actual URL context or route, client type and visible result. If the direct native view works while the embed loses keyboard access, examine the embed boundary and how focus enters or exits it. Editing the child binding will not fix a host that never passes focus inward.
+
+For a CSS-only change, inspect which document owns the element. A host stylesheet can affect the iframe element's outer size without restyling the remote child document. A native project rule can change inner layout while the host continues clipping it. Compare each boundary before attributing the result to browser compatibility. Offer the supported standalone route when the embedding constraint is unresolved.
+
+Deliver three observations tagged direct, host and embedded, plus the first boundary where behavior diverges and the resource owner able to change it.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

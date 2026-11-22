@@ -43,6 +43,14 @@ Trace each sentence to the event that authorizes it. “Request submitted”, �
 
 Read the sentence in context. A compact row may already identify the equipment and engineering unit, while a global notification must name them. Inspect the translation key's other callers before removing context. Test long translated messages with the actual popup width and with a state change occurring while the text wraps.
 
+## Make time phrases verifiable
+
+A label such as “updated just now” is ambiguous when the query returned an old sample. Decide what event the phrase refers to and trace the timestamp that drives it. A maintenance detail may need an absolute date and zone for correlation; the overview may benefit from a compact age cue. Both should describe the same event when they share wording.
+
+Use a sample recorded just before midnight and display it shortly after midnight in the deployed locale. Inspect the translated day, date order and unit. Repeat with an unavailable timestamp. “Last sample unavailable” communicates a different fact from “no recent samples”. When space is tight, retain the critical qualifier near the number and move explanation to an accessible detail surface.
+
+Example copy pair: overview “Last sample 12 min ago”; detail “Sampled 21:48, plant local time”. Populate from the same fixture instant and include the date when crossing a day boundary.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

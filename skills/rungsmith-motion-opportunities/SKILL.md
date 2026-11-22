@@ -36,6 +36,14 @@ Follow the operator's attention through an actual transition. Look for an object
 
 Evaluate frequency, interruption and consequence together. A rare maintenance reveal may allow a short transition. A reading that refreshes repeatedly or an alarm onset needs immediate interpretation. Include a stationary equivalent for each proposed cue. If a static relationship already solves the task, capture that finding instead of adding an effect solely to make the view feel more active.
 
+## Count how often the trigger really fires
+
+Use the observed trigger, not the name of the feature, to estimate frequency. In a fixture with 12 visible readings updating every five seconds, a class reapplied per reading could initiate 144 cues per minute if every update restarts it. Opening the detail once initiates one cue. Verify whether the actual binding restarts the class before reporting either figure as observed.
+
+Record exposure per surface and per operator task. A brief transition on opening a maintenance panel may preserve orientation; the same transition tied to every refreshed reading can compete with alarms elsewhere. In a comparison run, freeze the process values and repeat the operator action, then resume only the updates. Keep candidates whose intended trigger can be isolated and whose stationary alternative leaves a real ambiguity.
+
+Candidate record: trigger, observed frequency, relationship explained, proposed owner, stationary alternative and consequence of rapid repetition.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

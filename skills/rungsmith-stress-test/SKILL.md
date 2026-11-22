@@ -41,6 +41,14 @@ Inspect the component's real input shape before choosing values. An equipment pa
 
 Combine cases only after each single-variable case is understood. An unusually long translated label plus an expanded dock may be the smallest trigger for clipping. Adding simultaneous quality loss and sorting too early makes diagnosis ambiguous. Preserve the smallest failing combination and test it against a different consumer to identify whether the fault belongs to data, child layout or host layout.
 
+## Build a reversible fixture selector
+
+In an isolated development host, define a case selection local to the view and map it to named records. For an equipment summary use nominal, distinguishing-suffix, good-zero, missing-quality and delayed-old-result. Keep the child contract identical across cases. If the real child is hardwired to a source, use an existing simulation or development adapter and document the boundary you exercised.
+
+Make reset restore selection, active fixture and pending simulated responses. Otherwise the fifth test can inherit the fourth test's late data and produce an irreproducible report. Run nominal, failing case, nominal, then the same failing case again. Record the smallest named sequence that reproduces the defect and whether returning to nominal fully recovers the screen.
+
+Provide the fixture name, input record, host dimensions, simulated response ordering, expected result and first divergence. Include a reset path that another developer can repeat.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

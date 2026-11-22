@@ -49,6 +49,14 @@ Write down the public event in operator terms, such as “open this equipment de
 
 For message-driven views, record the sender, message type, configured scope, instance discriminator and side effect. Two components can receive a message while only one should act. A log at the sender cannot establish single execution at the recipient. Exercise same-equipment duplicate instances as well as different equipment instances to reveal filters that rely on asset ID alone.
 
+## Trace two views of the same equipment
+
+Place an overview mini-panel and a maintenance panel for the same fixture asset on one page. Give each a distinct local instance key. For an interaction meant for the initiating panel, carry enough recipient context in the project's existing payload to distinguish the two. The asset ID answers which equipment is involved; the instance key answers which UI recipient owns this reaction.
+
+For a development message, a payload might contain equipmentId P-204, instanceKey maintenance-right and selectedTab history. Inspect sender scope and each recipient filter. A page-scoped event may be intentionally observable by both views, while only one should open its history tab. Record reception separately from action. Broader updates genuinely intended for every representation of the asset can keep asset-level targeting.
+
+Expected replay: both matching handlers may observe the event; only maintenance-right opens history. The overview keeps its previous selection.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

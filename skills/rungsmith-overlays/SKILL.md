@@ -38,6 +38,14 @@ Map each way the overlay can end: explicit close, Escape where supported, select
 
 For asynchronous content, capture the asset and context when starting the request. When results arrive, verify they still belong to the visible surface. A stable popup ID can intentionally serve several assets over time. That makes stale responses possible even when there is only one popup on screen. Exercise delayed success and failure after dismissal as separate cases.
 
+## Select the interaction surface by what must remain possible
+
+Use a modal workflow when the operator must finish or dismiss a decision before proceeding in the parent. A modeless detail or dock suits comparing a selected item with its neighbors. Anchored help suits short explanations when keyboard and touch access are supported. A tooltip is a poor home for required input, scrolling history or the only explanation of unavailable equipment.
+
+Compare the candidate surfaces in the actual page layout. Open an equipment detail and ask the reviewer to select an adjacent row. If doing so is essential and the chosen popup blocks it, the issue is the surface contract. If a dock leaves the overview too narrow to compare rows, inspect an explicit compact layout or dedicated detail route. Test close affordance and recovery within each viable surface.
+
+Write one line for each surface considered: parent task while open, focus ownership, space consumed, supported dismissal and the reason it fits or fails.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |

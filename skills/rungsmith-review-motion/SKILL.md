@@ -38,6 +38,14 @@ Begin with a trigger, initial state and interaction sequence. “Slow transition
 
 Choose the smallest repair consistent with the cause. Remove a redundant entrance, correct an incorrect trigger, narrow a shared rule or repair native cleanup before adjusting a curve. Give a counterexample that must continue working. A change that fixes reversal for a popup but removes the only visible focus cue in the underlying view is incomplete.
 
+## Calibrate the review verdict
+
+Use consequence and evidence to choose the verdict. A closed overlay that intercepts the next action is a reproducible functional defect. An entrance that looks slower than the rest of the project is a consistency concern until its consequence or project convention is established. A possible focus issue inferred from CSS is a targeted test request. Give each a different disposition so maintainers can act in the right order.
+
+For a blocking issue, specify resource, trigger, actual behavior, expected behavior and a nearby case that already works. For a timing preference, name the approved project precedent or a user-observed task cost. For an unverified risk, give the precise native replay that would resolve it. A useful review can approve the tested behavior while recording a client that remains untested.
+
+Worked finding: after immediate dismiss-and-reopen, the transparent outgoing surface captures the next click. Verify with two harmless activations and a keyboard replay after correcting the close lifecycle.
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |
