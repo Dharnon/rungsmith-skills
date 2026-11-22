@@ -18,9 +18,15 @@ Represent pending, success and failure without confusing a notification with an 
 
 3. Test duplicate actions, timeouts, dismissal and reconnect; retain persistent alarm information in the alarm system.
 
+## Assign feedback to the request that produced it
+
+Trace the button action, host command handler and result binding or message. Record equipment ID and any request identifier the actual contract provides. If two presses are allowed, determine how a late result is associated with its originating request. When the contract cannot disambiguate concurrent requests, keep the UI from claiming a specific outcome.
+
+Simulate submission, delayed acceptance, failure and a late reply after navigation. Open two embedded faceplates on the same page. Check which instance renders each message and whether both the host and child announce the same event. A timeout describes missing confirmation. Show the authoritative result when it arrives and retain any active alarm in its own surface.
+
 ## Perspective constraints
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+Read the actual native view contract and target-version APIs. Bind displayed process state to its authoritative source. Keep command authorization in the existing command path and preserve controller interlocks. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
 
 ## Evidence and handoff
 

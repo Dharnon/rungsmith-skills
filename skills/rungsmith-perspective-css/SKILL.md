@@ -23,3 +23,9 @@ For a catalog iframe, identify host-page, iframe-document, Perspective dock and 
 For modern CSS, check target browser/Workstation support and a supported fallback. Browser support does not grant control over Perspective's DOM or JavaScript lifecycle. Keep native layout as the baseline; apply advanced CSS only where it solves the requested problem and stays scoped.
 
 Verify actual route, viewport and state. Check computed geometry, keyboard focus, light/dark contrast and neighboring components. Separate file/schema checks from native runtime observations. State any untested client/version.
+
+## Debug overflow at the embedding boundary
+
+Reproduce clipping with the same view embedded at the failing width. Inspect the host container type and child position first, then the Embedded View's default width and height flags, child root layout and overflow rules. Find the first box that exceeds its available space. Changing overflow on the last box can conceal a missing command or quality label.
+
+Test a short equipment label and one with a long distinguishing suffix. Check both with the page dock expanded. Preserve access to the suffix and the unit while allowing the intended container to scroll. Verify a second consumer at normal width and identify which change belongs to the host versus the shared child.

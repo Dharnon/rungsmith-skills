@@ -12,7 +12,7 @@ Establish the target Ignition version, project, operator task and implementation
 
 ## Interaction contract
 
-Before editing a control, identify its input value, output event, local transient state and host-owned process state. Specify what click, drag, keyboard activation, Escape, blur and reopening do where applicable. Verify supported native properties/events against the target version instead of inventing APIs.
+Before editing a control, identify its input value, output event, local transient state and process state reported by the equipment. Specify what click, drag, keyboard activation, Escape, blur and reopening do where applicable. Verify supported native properties/events against the target version instead of inventing APIs.
 
 Use native semantics when available. Make keyboard focus visible with the project's palette. Keep a tooltip tied to hover/focus and dismiss it when its trigger is activated; selected state is not tooltip state. A modal must restore focus, handle dismissal and preserve instance identity. Do not use global message state that lets one equipment panel modify another.
 
@@ -40,4 +40,10 @@ Test actual keyboard and pointer behavior, lock/disconnect states, two equipment
 
 This is original Rungsmith guidance informed by the public behavior and design domains of [Vercel UI SDK](https://github.com/vercel-labs/ui), [Modern Web Guidance](https://github.com/GoogleChrome/modern-web-guidance) and [Emil Kowalski's skills](https://github.com/emilkowalski/skills). It is not an exhaustive translation or a claim of upstream endorsement. Consult the requested source at a pinned revision when adapting a specific behavior.
 
-Catalyst is a separate, version-dependent exploration. Check the installed version/modules and current official docs before proposing an integration. Do not assume an 8.3 Gateway can run the documented 2027 beta functionality.
+Catalyst is a separate, version-dependent exploration. Check the installed version/modules and current official docs before proposing an integration. Record the specific capability and supported release when Catalyst is relevant to the request.
+
+## Prioritize findings in one operator journey
+
+Walk from an overview row into its equipment detail, inspect a measurement and return to the overview. At each step record the selected equipment, current data quality and next available action. Review with a narrow embedded host and one unavailable reading. A polished detail panel that labels stale data as live takes priority over an inconsistent shadow.
+
+Assign each finding to its actual resource: host layout, child binding, shared style class or interaction handler. Give the developer a reproduction and one observable acceptance condition. For example, reopening the second pump must display that pump's identifier and quality before any reading can be interpreted as current. Indicate the native client used or the fixture still required.

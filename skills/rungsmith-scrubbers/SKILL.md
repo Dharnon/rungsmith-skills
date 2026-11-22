@@ -18,9 +18,15 @@ A consistent value contract and latency observations in the native client.
 
 3. Test pointer capture where available, keyboard steps, cancellation and actual interlock behavior.
 
+## Separate the draft, emitted intent and confirmed setpoint
+
+Inspect the slider's supported update mode, numeric input range, engineering unit and host binding direction. Determine who rounds a draft and what should happen when a value falls between steps or the configured bounds change mid-edit. Use a fixture host that records emitted values and can delay confirmation.
+
+For a fractional increment, edit once with the keyboard and once by dragging near the upper bound. Compare the displayed draft, emitted request and host-confirmed value in the same units. Cancel mid-drag, change the lock state and repeat with a second instance. On rejection restore or identify the authoritative setpoint. Record how many intents each edit produced.
+
 ## Perspective constraints
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+Read the actual native view contract and target-version APIs. Bind displayed process state to its authoritative source. Keep command authorization in the existing command path and preserve controller interlocks. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
 
 ## Evidence and handoff
 

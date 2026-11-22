@@ -16,3 +16,9 @@ For a modal, let the host choose the equipment instance, populate its declared p
 Keep each equipment instance's commands and state isolated. Confirm input/output/inout directions and close-popup identifiers. Display disconnected/bad-quality values distinctly, preserve command interlocks, and distinguish sample state from real tags. Only bind live commands within the user's explicitly requested equipment scope.
 
 Verify open, close, reopen, tab switching, two different equipment instances, command feedback, alarm states and container resizing. A loaded iframe or a JSON parse is not runtime verification. Report measurements or observations of initial render rather than claiming zero loading from a static screenshot.
+
+## Commission the display contract with fixture equipment
+
+For each displayed channel, record the declared parameter, host binding, engineering unit and behavior on quality loss. For a pump, trace requested start and observed running indication separately. For a PID faceplate, trace setpoint, process variable and output independently so a formatting change cannot silently swap quantities.
+
+Embed two instances with different fixture identities. Open a detail panel from each, switch between Control and History, then reopen the first. Verify the panel header, history source and command intent all resolve to the selected fixture. Test one instance with a valid zero while the other has a missing measurement. Save the mapping and observations with the resource path.

@@ -18,13 +18,15 @@ Name an interaction precisely so the implementation request is clear.
 
 3. Identify whether the effect is native CSS, a supported approximation or a custom-module requirement.
 
-## Perspective constraints
+## Turn an effect description into a Perspective request
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+For “the details should grow out of the selected row”, determine whether the user needs a visual relationship, literal geometric continuity or simply clear selection. A stable selected-row cue plus a panel reveal may express the relationship when the row and popup are separate native view instances.
+
+Write the request with its trigger, owning resource, start and final states, interruption behavior and reduced-motion outcome. Distinguish an opacity transition on one owned element from a shared-element transition requiring geometry across two surfaces. Verify the latter's required hooks before promising it. Include a short replay such as switching rows halfway through opening.
 
 ## Evidence and handoff
 
-A precise term and an implementation boundary. Record the resource paths and tested client/state. Distinguish static checks, import and native interaction verification. Mark unsupported or untested behavior explicitly.
+A precise term and an implementation boundary. Cite the project evidence behind the recommendation and identify any behavior that still needs a session test.
 
 ## Example request
 

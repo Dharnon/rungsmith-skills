@@ -22,10 +22,16 @@ For selects and trees, test value propagation and identity under reordered items
 
 For scrubbers, separate visual feedback from committed values. Inspect native update modes and supported pointer/keyboard events. Apply bounds, units, increments and actual enabled/interlock state. Measure drag continuity and Gateway round trips; avoid queuing a script for every visual frame. Do not claim browser-local behavior for a server-driven implementation.
 
-Scope messages and popup identifiers to the view/equipment instance. Test two instances simultaneously. A disabled appearance must correspond to blocked interaction; a hidden control is not command authorization. Bind real tag writes only within the user's requested scope and maintain host-side permission/interlock checks.
+Scope messages and popup identifiers to the view/equipment instance. Test two instances simultaneously. A disabled appearance must correspond to blocked interaction; a hidden control is not command authorization. Bind real tag writes only within the user's requested scope and preserve authorization at the command boundary and existing controller interlocks.
 
 Check internal popup routing and the public output event separately: an internal recipient token does not make a page-scoped host event distinguishable. Inspect option count limits and per-option disabled handling, not just the component-level disabled flag. Test invalid ranges, nonpositive steps and externally supplied out-of-range values; clamping a percentage does not validate the underlying contract.
 
 Classify findings as confirmed static defects, risks requiring native verification, or positive evidence. Separate focusability, keyboard activation and visible focus instead of treating them as one property.
 
 Verify click, keyboard, repeated activation, cancellation, rapid changes, disconnected state and reopen. Record outputs and affected instance identity. A screenshot does not establish an interaction pass.
+
+## Trace an intent across an embedded view boundary
+
+For a row action, map the activating component, child parameter or message payload, receiver scope and final host action. Page-scoped messages can reach several matching handlers. Inspect the filter at each recipient and use stable instance identity when equipment identity alone cannot distinguish two panels for the same asset. [Ignition component message handlers](https://docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/scripting-in-perspective/component-message-handlers)
+
+Run two copies on one page and activate just one. Record which handlers received the message, which acted and which public outputs changed. Reorder the rows and repeat with keyboard activation. A single visible popup is insufficient evidence of a single action when both handlers target the same popup ID.

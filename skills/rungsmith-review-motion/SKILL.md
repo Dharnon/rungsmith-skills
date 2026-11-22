@@ -18,9 +18,15 @@ Check an existing transition against its purpose and actual behavior.
 
 3. Report before, proposed after and reason; separate native observations from static risks.
 
+## Review a single transition against a replay
+
+Start with one changed resource and one trigger. Trace the binding that applies its class and any action responsible for cleanup. Review entry and exit independently: a popup can open smoothly yet leave an invisible layer after rapid dismissal. Check the effect at normal speed before slowing a recording to inspect individual frames.
+
+Exercise opening, reversal and a second activation while data arrives. Observe whether a value update restarts the motion and whether interaction begins before the display settles. Record the client, trigger sequence and end state for each finding. A stylesheet duration establishes intent; use session observations for claims about actual latency.
+
 ## Perspective constraints
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+Read the actual native view contract and target-version APIs. Bind displayed process state to its authoritative source. Keep command authorization in the existing command path and preserve controller interlocks. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
 
 ## Evidence and handoff
 

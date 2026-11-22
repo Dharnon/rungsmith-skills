@@ -19,3 +19,9 @@ Design rapid reversal and interruption. Repeated navigation must end in the last
 For a morph requiring DOM measurement or browser physics unavailable to native Perspective, explain the limitation and implement a supported approximation only when it fits the requested scope. Do not present approximate timing as exact parity. A custom module is a separate implementation choice.
 
 Measure drag feedback, input-to-visible response and session/CPU behavior using the real native client. Test repeated navigation, active data updates, narrow layout and reduced motion. Report observed behavior and tested environments, not a generic 60fps promise.
+
+## Diagnose a faceplate that flashes on data updates
+
+Trace the class or style binding back to the event that changes it. Separate opening the native view from changes in process data and from the arrival of history. If a live binding rebuilds the container or toggles its entrance class, watch the title and controls over several updates to locate the first element that restarts.
+
+Drive a stable simulated tag, then a burst of changing readings while opening and closing the faceplate. Observe the shell, number formatting and input availability independently. Restrict transition ownership to the intended change. Replay with reduced motion and record the interruption result on the deployed client.

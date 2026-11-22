@@ -18,9 +18,15 @@ Subtract animation that slows work or competes with process information.
 
 3. Verify final styles, close behavior and reduced motion; retain documented operational feedback.
 
+## Untangle presentation from popup cleanup
+
+Find the style class, visibility binding and event or timer that actually closes the popup. Record the final state first. If removing a fade leaves an invisible overlay intercepting input, repair the native close path so cleanup completes even when animation duration is zero.
+
+Replay frequent refreshes with stationary process values and then one genuine state change. Confirm the refresh no longer retriggers decoration and the state change still reads clearly. Close and reopen rapidly, then tab through the area previously covered. Verify it returns to the expected interaction state with reduced motion enabled.
+
 ## Perspective constraints
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+Read the actual native view contract and target-version APIs. Bind displayed process state to its authoritative source. Keep command authorization in the existing command path and preserve controller interlocks. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
 
 ## Evidence and handoff
 

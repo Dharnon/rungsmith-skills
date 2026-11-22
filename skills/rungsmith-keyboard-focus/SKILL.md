@@ -18,9 +18,15 @@ A keyboard interaction matrix and supported native fixes.
 
 3. Exercise the complete flow including disabled controls and repeated popup opening.
 
+## Trace a complete path without a pointer
+
+Choose a real route, such as selecting equipment, opening details, editing a filter and closing the popup. Record the focus target before and after each step in a launched session. Inspect the component configuration and enabled state when focus skips an item. A visible outline, reachable control and successful activation are separate observations.
+
+Repeat after filtering out the trigger row. Check where focus lands when the original opener no longer exists and choose an available logical return target if the platform supports it. Verify backward traversal, Escape while editing and a second open/close cycle. Report the first failing keystroke and resource path.
+
 ## Perspective constraints
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+Read the actual native view contract and target-version APIs. Bind displayed process state to its authoritative source. Keep command authorization in the existing command path and preserve controller interlocks. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
 
 ## Evidence and handoff
 

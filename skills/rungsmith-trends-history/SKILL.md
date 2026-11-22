@@ -18,9 +18,15 @@ A chart/data contract and evidence that controls change the selected range.
 
 3. Check gaps, quality, aggregation, loading, empty results and request frequency.
 
+## Trace the selected window into returned samples
+
+Start at the range control and follow the selected asset, start/end timestamps, time zone and aggregation into the actual history binding or query. Compare the query bounds and returned timestamps with the axis bounds. A changing axis with unchanged data can conceal a disconnected range control.
+
+Use fixture history with a short excursion, a known gap and a flat interval. Compare short and long windows and inspect whether aggregation obscures the excursion or interpolation bridges the gap. Switch assets during a pending load and confirm the legend and samples belong to the same selection. For local-time labels, include an interval near a clock change when relevant.
+
 ## Perspective constraints
 
-Read the actual native view contract and target-version APIs. Keep process state, command permission and interlocks owned by the host. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
+Read the actual native view contract and target-version APIs. Bind displayed process state to its authoritative source. Keep command authorization in the existing command path and preserve controller interlocks. Use supported native properties/events and scoped CSS; web libraries, DOM APIs and React adapters are not executable view definitions. Preserve unrelated resources and local customizations. Do not queue per-frame Gateway scripts to imitate browser-local feedback.
 
 ## Evidence and handoff
 
