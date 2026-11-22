@@ -9,6 +9,8 @@ metadata:
 
 Build native Perspective views from the resources available in the connected Rungsmith registry. The website may show native screenshots, HTML illustrations or live Perspective iframes; none is itself an importable component package.
 
+Practice this workflow in a development project: [Trace a repeater instance into its detail view](RECIPES.md).
+
 ## Read the project first
 
 Find the user's target project, Ignition version, existing reusable views, theme and available space. Prefer project-local files and established view paths. A hosted MCP only knows its registry; it cannot inspect the user's disk or Gateway. Do not invent a project-context tool or claim it read a project.
@@ -54,3 +56,21 @@ For package installation or version upgrades, read [references/installation.md](
 For a repeated equipment summary, inspect the Flex Repeater's view path and instances array. Match the parameter names in one instance to the declarations on the child view. Follow the identity into its binding and the rendered unit and quality indicator. Check an existing consumer before changing a reusable parameter default.
 
 Use two fixture instances with distinct IDs and visibly different readings. Reorder them and open details from the second. Verify the selected identity, the reading and the popup target together. If the child is correct standalone but clipped when embedded, inspect the host dimensions and the Embedded View sizing flags before editing child CSS. [Ignition Embedded Views](https://www.docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/views-in-perspective/embedded-views)
+
+## Preserve the public contract while adapting a reusable view
+
+Inventory one real use of each declared input, output and inout parameter before changing its type, default or meaning. A demo may tolerate a default equipment path while a consuming popup supplies the path dynamically. Follow the value from opener to embedded child and then back to the host when an output is involved. Document who supplies the initial value and who can change it after mount.
+
+Exercise an existing consumer with an omitted optional input, an explicit empty value and a later host update where those cases are supported. If an adaptation needs a different meaning, prefer an explicit host mapping over silently changing a shared field. Verify two consumers, including one created before the change, against the same resource revision.
+## Choose the right lifetime for each value
+
+Mark the public contract and the internal state separately in the view tree. An equipment ID supplied by the host belongs in the declared input contract. A locally expanded section can live with the child instance. A site-wide preference needs an owner that outlives one embedded view. Inspect consumers and bindings before changing where an existing value lives. A session-wide shortcut can silently couple two otherwise independent instances.
+
+For a composite input, inspect how the target version and view configuration handle incoming keys and defaults. Test an omitted field, an explicit empty field and a partial update through an actual host. Inspect the child's effective params rather than assuming a source JSON object reaches it unchanged. Keep a compatibility note for existing consumers when defaults or data shapes change.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| A changed child default fixes the demo and breaks an older consumer | Compare omitted params and explicit params in both hosts. | Restore compatibility or make the variant explicit at the host. |
+| Two copies unexpectedly share a filter | Inspect whether local UI state was stored in a wider session property. | Scope independent state to each instance and keep deliberate shared preferences explicit. |

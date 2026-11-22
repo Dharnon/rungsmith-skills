@@ -10,6 +10,8 @@ metadata:
 
 A stable overlay contract and observed lifecycle results.
 
+Practice this workflow in a development project: [Open two detail popups on one page](RECIPES.md).
+
 ## Workflow
 
 1. Trace the popup host, instance identity, parameters and close owner.
@@ -23,6 +25,25 @@ A stable overlay contract and observed lifecycle results.
 Trace the launcher's event, popup ID, target view and parameters into the child binding. Determine whether the project intends one reusable detail popup or one popup per equipment item. For a reusable popup, make the equipment identity and displayed channels change together. For independent popups, ensure the close action addresses the instance that initiated it.
 
 Open A, switch to B while A's data is loading, dismiss B, then reopen A. At each step inspect title, displayed value, selected tab and close target. Record which properties should reset and which should persist. Repeat at the smallest supported viewport and verify the close control remains reachable when content overflows.
+
+## Choose a reset policy for each piece of popup state
+
+Classify equipment identity, selected tab, scroll position, unsaved edits and query results separately. An operator may expect a layout preference to persist across openings while an unfinished setpoint draft should remain associated only with its original asset. Inspect whether each value lives on the child view, on its host or in a broader session property.
+
+Reopen the same asset, open a different asset and open two panels for the same asset. Record which values are deliberately restored and which are initialized. If two panels share a value accidentally, trace the storage or message recipient before assigning a new popup ID. A distinct popup ID resolves lifecycle targeting but cannot isolate a shared session property.
+
+## Define dismissal by cause
+
+Map each way the overlay can end: explicit close, Escape where supported, selection, parent navigation and reopening through another launcher. Decide what happens to transient edits and focus for each path. A tooltip, picker and equipment detail popup can have different dismissal contracts even when they share the same visual shell. Inspect the native launch configuration and close owner before changing presentation.
+
+For asynchronous content, capture the asset and context when starting the request. When results arrive, verify they still belong to the visible surface. A stable popup ID can intentionally serve several assets over time. That makes stale responses possible even when there is only one popup on screen. Exercise delayed success and failure after dismissal as separate cases.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| Closing popup A also closes popup B | Inspect popup ID choice and the close action's target. | Use identities consistent with the intended coexistence policy. |
+| Reopening the same asset unexpectedly restores an old error | Trace error state to child, opener or session storage. | Reset or preserve it at the lifecycle boundary required by the host. |
 
 ## Perspective constraints
 

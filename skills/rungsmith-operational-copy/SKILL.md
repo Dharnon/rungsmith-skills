@@ -10,6 +10,8 @@ metadata:
 
 Make labels, errors and status text specific enough to act on.
 
+Practice this workflow in a development project: [Write messages for states the host can distinguish](RECIPES.md).
+
 ## Match each message to evidence
 
 Trace the displayed string to its trigger, translation key and available equipment context. For command feedback, distinguish the user action, the request result and the observed equipment state. Those signals can arrive separately. Choose the most specific wording supported by the signal that actually fires.
@@ -28,6 +30,25 @@ Review the message in place with a long equipment name and the longest supported
 ## Check shared labels in their real hosts
 
 Inspect whether the displayed text comes from a component property, expression, translation lookup or host-supplied view param. If both an overview and a popup use the same key, check that each supplies enough equipment context. Replay a missing or delayed parameter on popup open so a newly selected asset cannot inherit the last asset's success message.
+
+## Handle precision, units and uncertain causes
+
+Read each value together with its equipment identity, unit and source precision. A format change that adds decimals can imply measurement accuracy the source never supplied. Select wording and numeric formatting from the project's engineering conventions. When a value is unavailable, check whether the unit still clarifies the expected quantity or leaves an ambiguous fragment beside a placeholder.
+
+For a rejected command, distinguish an explicit reason supplied by the host from an inference based on a disabled button. Present a permitted next action only when the current state supports it. Test the final message in its smallest real container using the project's longest relevant translation. Make sure wrapping preserves which asset, action and outcome belong together.
+
+## Build a vocabulary from observed signals
+
+Trace each sentence to the event that authorizes it. “Request submitted”, “accepted” and “running” describe different observations. For a screen that cannot distinguish the first two, choose wording supported by the weaker observation. For errors, distinguish an explicit reason returned by the host from a hypothesis inferred from adjacent indicators. Preserve useful diagnostic detail for maintenance without making an unsupported claim to the operator.
+
+Read the sentence in context. A compact row may already identify the equipment and engineering unit, while a global notification must name them. Inspect the translation key's other callers before removing context. Test long translated messages with the actual popup width and with a state change occurring while the text wraps.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| “Saved” appears on a request that later fails | Identify which observable signal triggers the success string. | Use submission wording until confirmation exists. |
+| The same translated message is clear in a row but vague in a popup | Inspect equipment context supplied by each host. | Separate keys or include the missing context according to the actual callers. |
 
 ## Perspective constraints
 

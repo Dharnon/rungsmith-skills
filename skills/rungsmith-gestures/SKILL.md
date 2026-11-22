@@ -10,6 +10,8 @@ metadata:
 
 Define bounded drag, release and cancellation behavior for native controls.
 
+Practice this workflow in a development project: [Resolve drag versus scroll on touch](RECIPES.md).
+
 ## Workflow
 
 1. Identify supported pointer and keyboard events in the target component.
@@ -25,6 +27,25 @@ Inspect the native component's supported events and the enclosing scroll contain
 Use a simulated host that records emitted intents. Drag outside the control, reverse direction, then release. Repeat with a permission change during the drag. Count intents, inspect their equipment identity and confirm cancellation restores the displayed authoritative value. When reliable release outside the control is unavailable, use a supported native input or explicit Apply action.
 
 Record which parts of the gesture the installed component handles internally and which changes reach an event script. A view custom property can isolate a draft per instance, but script-driven updates still cross the client/Gateway boundary. Test release and cancellation in the launched session before attributing browser pointer-capture behavior to the component.
+
+## Resolve a change arriving during a drag
+
+Choose a policy for external updates before implementing visual smoothing. In a simulated host, start dragging and change the confirmed value from another fixture input. Inspect whether a binding immediately snaps the thumb back, silently overwrites the draft or leaves two conflicting labels. Keep the latest accepted value available for cancellation and decide how a conflict is communicated according to the host contract.
+
+Repeat with a range reduction and then a lost permission while the pointer is down. Recheck validity at commit time through the existing command path. A release must not replay a draft that was valid only at drag start. Compare the same sequence with keyboard adjustment so the two input methods follow the same ownership and validation rules.
+
+## Specify the gesture as state transitions
+
+Define the start surface, permitted direction, point at which the interaction counts as editing, and what ends it. A small movement on a scrollable touch list may be the beginning of a scroll. Determine what the native control handles before adding a script. If the installed component cannot reliably distinguish the two gestures, a separate editing surface may serve the task better.
+
+During editing, keep visual feedback, transient value and host-confirmed value distinguishable. At release, consult the existing command contract for commit and rejection. On cancellation, recover the current authoritative value, which might have changed since the gesture began. Observe the actual native behavior when the pointer leaves the component; browser examples that depend on pointer capture require explicit support.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| The thumb jumps back during a held drag | Compare latest confirmed value with the local draft and incoming updates. | Resolve the ownership conflict before changing visual easing. |
+| Releasing outside occasionally commits twice | Record native release and parent action in a fixture with intent counts. | Choose one supported commit owner and verify cancellation separately. |
 
 ## Perspective constraints
 

@@ -17,8 +17,28 @@ Inspect the target Ignition version, project resources and reusable view paths b
 
 Without MCP, use /api/catalog/{id}?format=markdown on https://www.rungsmith.dev and follow its actual download link. Do not invent an npm or shadcn installer for Perspective. MCP retrieval is read-only; use authorized local tools to make changes.
 
+Practice this workflow in a development project: [Reinstall an unchanged revision](RECIPES.md).
+
 ## Rehearse an upgrade with a consuming view
 
 Inventory the existing embedded-view paths, parameter overrides, named style classes and project scripts used by one real consumer. Compare the candidate package to that inventory before import. A resource with the same path can have a different parameter direction or an added dependency even if the preview looks unchanged.
 
 Import into a development copy and open the existing host alongside a fresh example. Exercise a non-default parameter and observe the documented output in each. For missing styles, distinguish an absent stylesheet snippet from a consumer override. Record the package revision, imported paths, local deviations and result of reopening the host in a launched session.
+
+## Diagnose a successful import with a blank embed
+
+Start with the exact installed resource path and the Embedded View's configured path. Inspect parameter names, direction, required dependencies and the child root dimensions. Open the installed child directly with known example parameters. If that works, compare the same parameters inside the consuming host. If it is blank in both contexts, check missing dependencies and resource availability before changing the host layout.
+
+For a view that appears but lacks styling, inspect the project style resource and class assignments separately from import integrity. Record the first point where the imported example diverges from its documented contract. Retain the package revision and the local differences so a later upgrade can distinguish a packaging defect from a consumer customization.
+## Separate package integrity, import and consumption
+
+For the intended revision, inventory the resources actually supplied: view paths, descriptors, project scripts, named styles and any required stylesheet rules. Compare those paths with the development project. Two packages can contain resources with the same name while exposing different params. Resolve collisions before applying an update and preserve deliberate local modifications.
+
+After import, test an unchanged previous consumer as well as a fresh example. The example verifies the new happy path; the existing consumer exercises omitted defaults, old params and previously customized styles. Capture the first failing boundary: archive, resource recognition in Designer, child rendering or host interaction. This makes a blank embed diagnosable without reinstalling unrelated components.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| Styles duplicate on the second installation | Compare installed rule bodies, scopes and package revision. | Merge once and preserve customized declarations. |
+| Import succeeds but the original host stops receiving outputs | Compare parameter directions and event names against the previous contract. | Repair the host mapping or document migration before replacing more views. |

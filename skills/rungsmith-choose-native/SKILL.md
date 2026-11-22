@@ -10,6 +10,8 @@ metadata:
 
 Choose a native control or registered resource before building a new one.
 
+Practice this workflow in a development project: [Select by identity after filtering](RECIPES.md).
+
 ## Workflow
 
 1. Inspect existing project resources and their actual contracts.
@@ -23,6 +25,25 @@ Choose a native control or registered resource before building a new one.
 For equipment selection, write down the input identity, display label, empty selection and output the host consumes. Inspect the installed Dropdown and any registered selector against those requirements in Designer. Duplicate labels, a disabled item or keyboard-only operation can change the choice even if the candidates look identical.
 
 Embed the leading candidate in a small host with two identically named fixture items that have distinct IDs. Select each, reorder the options and inspect the host value. Record the chosen component or view path, any adapter it needs and the requirement that ruled out the runner-up. If neither candidate preserves identity, expose the gap before designing a replacement.
+
+## Account for the cost of ownership
+
+Evaluate a reusable view in the context in which it will live. A selector that works as a standalone page can become expensive when embedded once per equipment row. Inspect the candidate's dependencies, query bindings, initialization scripts and supported parameter directions. Determine whether the host needs continuous updates or only a committed selection. Verify the installed component exposes that distinction.
+
+Compare the smallest viable adaptations. A host-side mapping from an equipment ID to a label is usually easier to own than a replacement selection control with its own focus and dismissal logic. If the mapping loses disabled state or identity, describe that gap explicitly. Leave the project with a choice it can validate using its own data and client.
+
+## Evaluate the consumer contract before the component catalog
+
+Write the host's smallest meaningful example. What value will be supplied, what can change after mount, what output does the host consume, and what signals an empty or invalid selection? Use this example against a native component, then against an installed reusable view. Include disabled/read-only behavior and the input methods actually used at the station.
+
+Estimate maintenance cost from concrete resources: extra bindings, scripts to adapt data shapes, duplicated focus behavior, additional style dependencies and repeated queries. A larger registered control can be a better fit when it already owns a difficult lifecycle. A simple native component can be preferable when the adapter would otherwise recreate a second source of selection truth.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| An existing selector looks right but loses the selected item | Compare identity before and after option reorder, including duplicates. | Require stable IDs in the adapter or select a component whose contract preserves them. |
+| A reusable view expands scope unexpectedly | Inventory scripts, styles and data subscriptions required per instance. | Compare total consumer cost with a native control using the same acceptance case. |
 
 ## Perspective constraints
 

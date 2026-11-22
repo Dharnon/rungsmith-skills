@@ -10,6 +10,8 @@ metadata:
 
 An alarm state matrix and specific UX changes with verification gaps.
 
+Practice this workflow in a development project: [Two alarms with one display label](RECIPES.md).
+
 ## Workflow
 
 1. Read alarm data fields and existing acknowledgment flow.
@@ -30,6 +32,25 @@ Use a simulated alarm configured for manual acknowledgment. Run two occurrences 
 Record the status table filters at each step. A row can disappear when its state leaves the filter. Correlate journal transitions by EventId within each occurrence. [Ignition alarm event properties](https://docs.inductiveautomation.com/docs/8.1/platform/alarming/configuring-alarms/alarm-event-properties-reference)
 
 Repeat with two sources sharing a display label. Select one fixture event, record its EventId, then reorder the rows. Check that the selected event identity survives the sort and that an acknowledgment applies only to the intended selection. Compare the live table with the configured Alarm Journal Table over a range containing the fixture event. Record journal availability and filter settings when explaining missing history.
+
+## Investigate an apparently empty alarm list
+
+An empty status table has several plausible causes. Capture the selected source, display path, state filters and shelf visibility before changing the view. Use a known simulated event in the requested scope. Broaden one filter at a time in the development session and record which change makes the event visible. A count elsewhere on the page may cover a different area or priority range.
+
+Choose empty-state wording from the evidence the view actually has. A successful filtered result can say that no events match the current filters. A failed or unavailable source needs its own indication. Replay the case with a restrictive filter left active after navigation. The area and filter must remain discoverable before an operator interprets the empty table.
+
+## Design the row around three independent questions
+
+Read one row aloud. Which equipment is affected? Is its condition active now? Has someone acknowledged this occurrence? Priority answers a fourth question about significance. A red badge labelled “acknowledged” conflates at least two of these facts. Sketch the row with text first, assign each fact a stable place, then map site-approved colors to the appropriate dimension. Check the same row with color removed.
+
+If a banner and table disagree, compare their scopes using the same instant, area and definition of outstanding. One might count active conditions while the other includes cleared events awaiting acknowledgment. Document the two predicates in operator language. Change the label when the scopes are intentionally different; change the data selection when the view promises the same population.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| Status count decreases on acknowledgment | Compare the count predicate with active and acknowledgment flags for the same EventId. | Correct the caption or filter according to whether the count promises active conditions or outstanding acknowledgments. |
+| History is empty but live rows exist | Check journal profile, selected period, source filter and whether the fixture produced a transition in that period. | Expose unavailable history separately from a successful empty search. |
 
 ## Perspective constraints
 

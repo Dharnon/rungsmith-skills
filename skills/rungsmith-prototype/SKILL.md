@@ -10,6 +10,8 @@ metadata:
 
 Compare different solutions to one operator task before integrating a winner.
 
+Practice this workflow in a development project: [Build a native A/B switch for a maintenance task](RECIPES.md).
+
 ## Workflow
 
 1. Create isolated development views with the same realistic sample data.
@@ -23,6 +25,25 @@ Compare different solutions to one operator task before integrating a winner.
 Build isolated development views around one fixture contract with equipment identity, operating state, measurement quality and units. For a density decision, compare an always-visible summary with a selectable overview plus detail view. Feed both the same normal, faulted and missing-data examples. Keep edits and command feedback simulated.
 
 Ask the reviewer to locate the faulted asset and read its last reliable measurement at the target workstation size. Record mistaken selections, unnecessary navigation and clipped qualifiers. Use these observations to choose which layout to integrate. List the host view, reusable child and bindings needed to carry the chosen design into the project.
+
+## Control the variables between design alternatives
+
+Use the same equipment selection, quality transitions and timestamps across variants. An inline history view with cached data can look faster than a popup that starts a fresh query even if the layout itself offers no advantage. For a layout comparison, hold query readiness constant. For a loading-strategy comparison, make readiness the intentional variable and measure it explicitly.
+
+Replay a recovery task as well as a happy path: select the wrong equipment, return to the overview and find the correct asset. Record lost selection, repeated navigation and mistaken interpretation of unavailable values. Choose the variant based on the target operator task. Preserve useful individual findings even when neither complete variant is ready for integration.
+
+## Choose variants that test competing hypotheses
+
+Write the decision before building the comparison. “Inline trends help operators compare pumps” and “separate details preserve room to scan the whole line” are competing hypotheses. Two nearly identical cards with different colors rarely answer that question. Use the same equipment fixture and comparable working interactions. Limit each variant to differences that materially affect the chosen task.
+
+Run an ordinary task and a recovery task. Ask the reviewer to locate an exception, inspect its last reliable value and return to the same point in the overview. Then introduce a wrong selection or missing reading. Record navigation steps, loss of context and mistaken interpretations. Avoid declaring a winner from a visual preference when the measured operator task points elsewhere.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| Reviewers choose different variants on each run | Check fixture parity, task wording, starting state and cached data. | Repeat the comparison with the relevant variable controlled. |
+| The selected prototype cannot fit the real host | Compare standalone preview dimensions with the production embedding context. | Repeat the decisive task inside the intended host before integrating. |
 
 ## Perspective constraints
 

@@ -10,6 +10,8 @@ metadata:
 
 Turn an unclear UI request into the right focused skill.
 
+Practice this workflow in a development project: [Triage a slow popup with three timestamps](RECIPES.md).
+
 ## Workflow
 
 1. Identify the operator task and the observable symptom.
@@ -33,6 +35,25 @@ Give the next reviewer the view path, the action to reproduce, the first diverge
 | One existing transition jumps on reversal | rungsmith-review-motion | Owning class and exact interruption sequence |
 | The same entrance repeats on many screens | rungsmith-audit-motion | Shared style and two affected consumers |
 | A displayed zero follows a failed binding | rungsmith-data-quality | Source quality and first transform producing zero |
+
+## Resolve competing explanations without a full audit
+
+When two workflows seem plausible, choose a small observation that separates them. For “the trend shows the old pump”, compare the selected equipment ID with the history query input and the returned series. An old input points to selection or popup context. A correct input followed by an old result points to history request ownership. A correct series under an old title points to a separate label binding.
+
+Carry the exact resource path and divergent pair of values into the selected workflow. If only a screenshot is available, mark the diagnosis provisional and specify the one interaction that would distinguish the causes. Avoid commissioning three broad audits when opening B immediately after A would settle the routing decision.
+
+## Choose a diagnostic experiment before choosing a specialist
+
+Start from the verb in the report. “Opening”, “waiting”, “choosing”, “sending” and “reading back” refer to different parts of a Perspective interaction. Build one short event trace from the available evidence. Stop at the first discrepancy between the intended and observed sequence. Later symptoms frequently disappear when that earlier transition is fixed.
+
+Choose between two plausible owners using one reversible substitution. Replace a slow live source with an equivalent fixture while keeping the view and selection constant. Change the client width while keeping the asset and data fixed. Disable a decorative transition while retaining the host action. Hand the specialist the discriminating observation and the parts of the setup that must remain constant.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| The action works in the first panel only | Compare params and recipient identity in two mounted instances. | Route to interactions with the observed sender and recipients. |
+| The same view works standalone but clips in a popup | Compare host size and embedded sizing before inspecting text formatting. | Route to Perspective CSS with the first overflowing boundary. |
 
 ## Evidence and handoff
 

@@ -10,6 +10,8 @@ metadata:
 
 Separate modern browser capabilities from what native Perspective can control.
 
+Practice this workflow in a development project: [Check a browser API at the deployment boundary](RECIPES.md).
+
 ## Workflow
 
 1. Search the exact capability and read its current guidance.
@@ -25,6 +27,25 @@ For a request such as copying an equipment ID to the clipboard, first identify t
 Describe the native outcome when the capability is unavailable, such as a selectable identifier that the operator can copy manually. Verify success and fallback in the actual deployment context. Return the resource owner, API evidence, client tested and observable result. A browser compatibility table alone cannot establish that a Perspective view exposes the API.
 
 A Perspective component event script runs on the Gateway even when a click in the browser triggers it. A Python event handler therefore cannot call browser objects such as `navigator.clipboard`. Inspect the documented component action or client integration that would perform the operation. [Scripting in Perspective](https://www.docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/scripting-in-perspective)
+
+## Evaluate a web feature across the actual embed boundary
+
+For popovers, fullscreen behavior or clipboard access, identify the document that owns the initiating element. A button on a catalog page and a control inside an embedded Perspective session can look adjacent while running in separate documents. Determine whether the capability needs browser-local code, a supported native action, an embedding permission or a project stylesheet.
+
+Test the relevant surface directly and then through its deployment wrapper. If the direct test succeeds and the embed fails, inspect the wrapper configuration before modifying the child view. If the native component exposes no supported hook, describe an equivalent operator outcome using a native component. Document which part of the original request remains unsupported on the installed client.
+
+## Identify what the native surface exposes
+
+For a proposed capability, distinguish browser support, an accessible integration point and the actual deployment context. The first can be true while the native component supplies no property, action or event for using it. Inspect the version-matched component contract. Then consider a project-owned stylesheet, existing native component, hosted page or module according to the required lifecycle and the user's scope.
+
+Design the fallback as an operator task. If a browser convenience is unavailable, can the user still identify, select or dismiss the item through a supported native interaction? Test failure explicitly, including embedding conditions where relevant. Report which surface and client were tested; success in a standalone demo cannot establish availability through a native view or embedded deployment.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| A feature works in a standalone demo only | Identify the execution surface, target client and embed restrictions. | Report the capability at the tested boundary and verify the native fallback. |
+| A browser API is available but the native event has no hook | Inspect the installed component's actions and properties. | Choose a supported interaction or document the remaining integration requirement. |
 
 ## Perspective constraints
 

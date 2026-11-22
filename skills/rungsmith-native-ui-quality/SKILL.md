@@ -10,6 +10,8 @@ metadata:
 
 Establish the target Ignition version, project, operator task and implementation surface. Native Perspective views use component contracts, bindings, styles and server-side scripting. Website React code, browser DOM APIs and custom Perspective modules are different surfaces; do not silently substitute one for another.
 
+Practice this workflow in a development project: [Review the route from alarm to equipment detail](RECIPES.md).
+
 ## Interaction contract
 
 Before editing a control, identify its input value, output event, local transient state and process state reported by the equipment. Specify what click, drag, keyboard activation, Escape, blur and reopening do where applicable. Verify supported native properties/events against the target version instead of inventing APIs.
@@ -31,6 +33,25 @@ Arrange information around the operator's next decision. Show equipment identity
 Choose density from the task and viewport. Avoid gratuitous KPI cards, repeated gradients, decorative graphs and fabricated precision. Test long equipment names, empty/history states, translated labels, large values and narrow layouts. A live chart must respond to its data/window controls; label sample data honestly.
 
 Animate a change only when it helps explain continuity or feedback. Prefer small scoped opacity/transform transitions where supported, honor reduced motion, and keep repeated operational actions fast. Verify rapid reversal and interruptions. Do not delay a command or animate alarm significance away to match a web effect. Native morphs that cannot reproduce browser measurement should be documented as approximations.
+
+## Prioritize faults when a screen has several kinds of debt
+
+Start from the operator's next consequential decision. A misleading value, wrong equipment identity or action directed to a different instance deserves investigation before visual inconsistency. Distinguish an unavailable operation from a visually disabled control whose host action still runs. Follow the actual binding or action to establish which problem exists.
+
+For each finding give the smallest reproduction and the resource that owns it. A popup header can belong to the launcher, a reading to the child view and a repeated color to a shared style. Group repairs only when they share an owner. Re-run the operator journey after the smallest fix to see whether downstream symptoms still exist before expanding the change.
+
+## Review the relationship between the overview and the detail
+
+Begin at the overview with a concrete question such as “Which pump needs attention and what evidence supports that?” Follow identity, quality, state and available actions into the detail and back. A view can be individually attractive while the route fails because units change without a label, colors change meaning or the popup opens a different asset after sorting.
+
+Inspect the actual ownership of each failure. A header can be composed by the popup host, a unit supplied through a view param and a quality badge derived by a local transform. Give the implementer the first incorrect value and its owner. Combine findings only when a shared change can fix them without altering other consumers.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| A polished popup shows a different unit from the overview | Trace the conversion source and both label bindings. | Repair unit/value agreement before revising visual hierarchy. |
+| The disabled control still acts from keyboard | Inspect the component's real enabled state and the existing action boundary. | Align the presentation and supported activation behavior; preserve existing authorization. |
 
 ## Evidence
 

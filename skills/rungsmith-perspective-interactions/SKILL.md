@@ -30,8 +30,28 @@ Classify findings as confirmed static defects, risks requiring native verificati
 
 Verify click, keyboard, repeated activation, cancellation, rapid changes, disconnected state and reopen. Record outputs and affected instance identity. A screenshot does not establish an interaction pass.
 
+Practice this workflow in a development project: [Catch one click reaching two handlers](RECIPES.md).
+
 ## Trace an intent across an embedded view boundary
 
 For a row action, map the activating component, child parameter or message payload, receiver scope and final host action. Page-scoped messages can reach several matching handlers. Inspect the filter at each recipient and use stable instance identity when equipment identity alone cannot distinguish two panels for the same asset. [Ignition component message handlers](https://docs.inductiveautomation.com/docs/8.1/ignition-modules/perspective/scripting-in-perspective/component-message-handlers)
 
 Run two copies on one page and activate just one. Record which handlers received the message, which acted and which public outputs changed. Reorder the rows and repeat with keyboard activation. A single visible popup is insufficient evidence of a single action when both handlers target the same popup ID.
+
+## Distinguish selection changes from activation
+
+In tables, trees and equipment pickers, a user can move focus, change selection or activate a detail action. Inspect which supported native event the implementation consumes. If a data refresh also updates a selection binding, opening a popup from every value change can trigger navigation without a new operator action.
+
+Use a fixture with two entries sharing a label. Select the second, reorder the dataset, update the selected ID from the host and finally activate it explicitly. Log which steps emit an intent and which merely reconcile displayed state. Keep the public output narrow enough that the parent can distinguish a user request from a restored selection.
+## Design the boundary between event and state
+
+Write down the public event in operator terms, such as “open this equipment detail”. Then identify the state changes that can occur without that intent: sorting, initial hydration, restoring selection or an external update from the host. If every selected-value change opens a popup, these distinct transitions can become indistinguishable. Inspect the supported activation event and current consumer expectations before changing the contract.
+
+For message-driven views, record the sender, message type, configured scope, instance discriminator and side effect. Two components can receive a message while only one should act. A log at the sender cannot establish single execution at the recipient. Exercise same-equipment duplicate instances as well as different equipment instances to reveal filters that rely on asset ID alone.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| A programmatic host update opens details | Compare the selection binding with the native activation event. | Separate value reconciliation from the intent that opens detail. |
+| A second instance acts on the same message | Capture scope, instance discriminator and recipient-side filtering. | Select the correct recipient before producing the side effect. |

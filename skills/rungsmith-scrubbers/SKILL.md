@@ -10,6 +10,8 @@ metadata:
 
 A consistent value contract and latency observations in the native client.
 
+Practice this workflow in a development project: [Round and reconcile a draft setpoint](RECIPES.md).
+
 ## Workflow
 
 1. Identify value ownership, units, step, bounds and commit event.
@@ -23,6 +25,25 @@ A consistent value contract and latency observations in the native client.
 Inspect the slider's supported update mode, numeric input range, engineering unit and host binding direction. Determine who rounds a draft and what should happen when a value falls between steps or the configured bounds change mid-edit. Use a fixture host that records emitted values and can delay confirmation.
 
 For a fractional increment, edit once with the keyboard and once by dragging near the upper bound. Compare the displayed draft, emitted request and host-confirmed value in the same units. Cancel mid-drag, change the lock state and repeat with a second instance. On rejection restore or identify the authoritative setpoint. Record how many intents each edit produced.
+
+## Handle revisions to range and unit during editing
+
+Capture the editing context when a draft starts: asset, unit, valid range and step. If the host switches engineering units, the displayed number may change meaning while the pointer remains down. Reconcile or cancel the draft according to the host contract before emitting another value. Do the same when selection changes to an asset with different limits.
+
+In a fixture, begin at a legitimate near-limit value and narrow the range during editing. Examine the draft, the host-confirmed value and the eventual request independently. A clamped thumb position can hide an invalid numeric payload. Test both a rejected commit and a valid retry so the control remains usable after the first failure.
+
+## Write down the numeric contract before binding the thumb
+
+List display unit, host unit, low and high bounds, allowed increment, reference point for rounding and the owner of the accepted value. A step of 0.5 with a minimum of 0.25 permits 0.25, 0.75 and 1.25 when the contract anchors steps at the minimum. Rounding to multiples of 0.5 from zero would produce a different set. Check the installed control and host validation with boundary examples.
+
+Separate preview from commit. A continuously updating numeric label can follow the draft without requiring a process request for every movement. A rejected request must leave an intelligible accepted value and permit another valid edit. If conversion and rounding occur at different layers, trace an example in both directions. Format for readability only after establishing the numeric value used by the host.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| Pointer and keyboard yield different accepted setpoints | Compare minimum, step origin, unit conversion and commit timing. | Use one numeric contract across input methods. |
+| The thumb is within bounds but the host rejects the request | Inspect raw payload, display rounding and the current host limits. | Validate the emitted numeric value and reconcile rejection with authoritative state. |
 
 ## Perspective constraints
 

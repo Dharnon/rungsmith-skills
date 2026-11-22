@@ -20,8 +20,28 @@ For a morph requiring DOM measurement or browser physics unavailable to native P
 
 Measure drag feedback, input-to-visible response and session/CPU behavior using the real native client. Test repeated navigation, active data updates, narrow layout and reduced motion. Report observed behavior and tested environments, not a generic 60fps promise.
 
+Practice this workflow in a development project: [Give a filter button local press feedback](RECIPES.md).
+
 ## Diagnose a faceplate that flashes on data updates
 
 Trace the class or style binding back to the event that changes it. Separate opening the native view from changes in process data and from the arrival of history. If a live binding rebuilds the container or toggles its entrance class, watch the title and controls over several updates to locate the first element that restarts.
 
 Drive a stable simulated tag, then a burst of changing readings while opening and closing the faceplate. Observe the shell, number formatting and input availability independently. Restrict transition ownership to the intended change. Replay with reduced motion and record the interruption result on the deployed client.
+
+## Select the animation owner before tuning timing
+
+Trace the visual property to its owner. A native Button handles its own activation, a project style can provide press feedback and a host binding can report the eventual result. Giving all three independent visual transitions can make a single press appear to issue multiple requests. Keep presentation tied to its source and make pending or confirmed states persist long enough to read when the process requires it.
+
+Compare the interaction with the stylesheet effect disabled and the command simulated. If response is still late, inspect the event or binding path. If disabling the effect immediately restores usability, tune the owning rule and replay the action under rapid repeats. Include a keyboard path and a no-motion path that communicate the same functional state.
+## Build motion from stable native states
+
+First make the resting states correct with all transitions disabled. Verify the native component's enabled state, binding ownership, final geometry and focus. Then identify the single visual property that should interpolate. A change to transform or opacity can convey local continuity while layout and process information remain stable. Inspect the actual client before claiming a rendering performance benefit.
+
+For a reversible interaction, define what happens when the state changes halfway through the effect. Compare direct retargeting with a fresh entrance. If the framework cannot expose the needed geometry, a persistent selection cue plus a local reveal can preserve the operator's sense of place. Keep command acknowledgment and process quality tied to their authoritative signals throughout.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| A delayed result restarts the entrance | Trace class changes and content mounting at result arrival. | Tie the entrance to the navigation event and update the result in place. |
+| The animation looks smooth but the operator cannot continue | Exercise the next action before the effect settles. | Fix hit targets, focus or control availability at the actual native boundary. |

@@ -10,6 +10,8 @@ metadata:
 
 Remove decoration and structure that do not help the operator task.
 
+Practice this workflow in a development project: [Remove one box without losing equipment grouping](RECIPES.md).
+
 ## Decide what earns its space
 
 Read the view and one comparable project screen. Name the decision an operator makes here, then trace the visible cues used to make it. For each candidate removal, identify what the border, heading, color or chart currently communicates. Keep a repeated enclosure when it binds an equipment identity to its own controls. A second enclosure around a lone value usually adds little.
@@ -21,6 +23,25 @@ Compare the original and revised view at the intended client width with both pum
 ## Check the actual cost of removing a wrapper
 
 Inspect the selected container in the Designer tree before deleting it. It may own a visibility binding, style class or event handler. Also inspect any bindings that refer to the container by component path. View parameters belong to the view. If its grouping is meaningful but its border adds noise, change the scoped style first. Compare sibling instances of the shared view before making the change project-wide.
+
+## Recover information hierarchy in a dense overview
+
+Read the overview at its deployed size with realistic data. Mark the first place an operator can identify the equipment, determine whether intervention is needed and find the corresponding detail action. A repeated title may be redundant on a standalone panel yet essential when that panel appears several times in a Flex Repeater. Inspect both contexts before removing the label from the shared child.
+
+For a wall of visually identical cards, group by the decision the operator makes. Align comparable measurements and units across rows. Move stable metadata into a quieter position while retaining the identity next to the value. Review the normal screen and then a single fault among normal neighbors. Check whether the operator can locate the exception and still read its context.
+
+## Edit the reading order before editing the palette
+
+Take a screenshot of a populated overview at normal operator distance. Hide the decorative backgrounds in a development copy. If the screen becomes unreadable, identify which job the removed surfaces were doing: separating machines, grouping a measurement with its unit, or locating commands. Restore a cue for that specific relationship. Empty space or aligned labels may work for values; adjacent command groups may need a stronger boundary.
+
+Build hierarchy from an actual sequence. For a pump comparison the repeated sequence might be identifier, running state, pressure, quality, detail action. Align those items in the same order across pumps. Preserve intentional departures such as a persistent alarm marker. A card is worth retaining when it makes the association between a control and its equipment unmistakable at a glance.
+
+## Diagnose by observation
+
+| Observation | Evidence to inspect | How to act on it |
+| --- | --- | --- |
+| Everything still looks equally important after removing borders | Trace the scan from asset identity to measurement and abnormal condition. | Adjust order, alignment and weight before removing another grouping cue. |
+| The simplified view is ambiguous only in a repeater | Compare the standalone child with adjacent instances showing the same value. | Restore an instance-local identity cue at the point where confusion starts. |
 
 ## Perspective constraints
 
