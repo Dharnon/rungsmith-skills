@@ -51,6 +51,12 @@ Add the actual margins, padding and any validation text that appears outside the
 
 Record the measured height at each boundary, the first overcommitted child and which region remains scrollable after the fix.
 
+## Verify Style Class selector and cascade ownership
+
+When using Perspective's Advanced Stylesheet, the [8.3 Style Classes manual](https://www.docs.inductiveautomation.com/docs/8.3/ignition-modules/perspective/styles/style-classes) documents the §.psc-§ prefix for native Style Class selectors and distinguishes that project stylesheet from Gateway-wide themes. Inspect the applied Style Class, generated selector, inline styles and the actual computed value in a native session. Do not assume a browser-only CSS demonstration is proof of a supported Perspective source or that a global §.ia-*§ override is safe.
+
+Capture normal, fault and bad-quality variants before changing selectors; compare the same view embedded in two hosts. The smallest safe fix should identify the first owning container/rule and preserve visible focus and units. When changes cross view boundaries or affect binding/state semantics, first use [Perspective engineering](../rungsmith-perspective-engineering/SKILL.md).
+
 ## Diagnose by observation
 
 | Observation | Evidence to inspect | How to act on it |
