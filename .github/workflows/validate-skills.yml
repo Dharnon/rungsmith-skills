@@ -1,0 +1,27 @@
+name: Validate Rungsmith skills
+
+on:
+  pull_request:
+    paths:
+      - 'skills/**'
+      - 'scripts/validate_skills.py'
+      - '.github/workflows/validate-skills.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'skills/**'
+      - 'scripts/validate_skills.py'
+      - '.github/workflows/validate-skills.yml'
+
+jobs:
+  skill-structure:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate metadata, relative references and eval inventory
+        run: python scripts/validate_skills.py
