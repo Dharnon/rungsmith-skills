@@ -26,7 +26,7 @@ The engineering skill contains [four reproducible fixture recipes](rungsmith-per
 
 The three existing workflows are available. New preview and draft workflows are published for review, with native verification pending. Read each guide and review changes before relying on it in a plant. Installation never grants permission to operate equipment or write tags.
 
-Compare the 35 guides and see which practical gap each revision addresses in the [skill comparison](COMPARISON.md).
+Compare the 36 guides and see which practical gap each revision addresses in the [skill comparison](COMPARISON.md).
 
 ## Documentation
 
