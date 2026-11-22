@@ -47,6 +47,10 @@ Report what was composed, which files changed and what was verified in a real Pe
 
 The same skill and tools serve both plans. Access comes from the server, never a prompt or client flag. A locked result exposes only public metadata. Explain the required plan; compose from available free controls when useful without pretending to reproduce a premium block. Check every dependency and release status before using source or an import package. Internal Viewcraft IDs and view paths remain valid.
 
+## When the catalog stops and native engineering starts
+
+This skill is the authority for **registered Rungsmith resources**, plans, source snapshots and download contracts. It is not a general-purpose generator for arbitrary Perspective views. For a newly authored native view, param/binding architecture, or adapting project resources beyond the registered component contract, activate [rungsmith-perspective-engineering](../rungsmith-perspective-engineering/SKILL.md). Its [native recipes](../rungsmith-perspective-engineering/RECIPES.md) cover two-instance view contracts, stale identities, quality states and evidence-based performance comparisons. Keep Rungsmith MCP discovery first whenever a catalog component might solve the request; never substitute invented catalog paths.
+
 ## Focused workflows
 
 For package installation or version upgrades, read [references/installation.md](references/installation.md), also available as get_agent_skill section installation and the standalone rungsmith-install skill. For equipment panels and modal hosts, read [references/faceplates.md](references/faceplates.md), also available as section faceplates and the standalone rungsmith-faceplates skill. Free example toolbars expose AI prompt; get_component_prompt returns the same workflow through MCP.
